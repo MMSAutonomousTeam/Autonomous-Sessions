@@ -47,7 +47,7 @@ By: Zaynap Ahmad
   <img src="images/udacity self driving.png" alt="System Components Diagram" style="width: 100%; max-width: 1000px;">
 </div>
 
-## **2. Software Integration**
+# **2. Software Integration**
 
 ### Why Integrate Software Components?
 
@@ -96,3 +96,12 @@ graph TD;
     class E,H,K detailNode;
     class F,G,I,J,L,M detailNode;
 ```
+
+### HOW ?
+
+using the frameworks
+### Frameworks
+
+<div align="center">
+  <img src="images/software framework .png" alt="System Components Diagram" style="width: 100%; max-width: 1000px;">
+</div>
