@@ -4,10 +4,10 @@ By: Zaynap Ahmad
 
 ## Our Outlines:
 
-1. System Components
-2. Software Integration
-3. Hardware - Software Integration
-4. Hands-On Activity
+#### * **System Components**
+* **Software Integration**
+* **Hardware - Software Integration**
+* **Hands-On Activity**
 
 ## **1. System Components**
 
@@ -100,6 +100,7 @@ graph TD;
 ### HOW ?
 
 using the frameworks
+
 ### Frameworks
 
 <div align="center">
