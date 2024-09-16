@@ -4,7 +4,7 @@ By: Zaynap Ahmad
 
 ## Our Outlines:
 
-#### * **System Components**
+* **System Components**
 * **Software Integration**
 * **Hardware - Software Integration**
 * **Hands-On Activity**
