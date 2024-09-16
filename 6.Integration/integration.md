@@ -51,7 +51,7 @@ By: Zaynap Ahmad
 
 ### Why Integrate Software Components?
 
-<style>
+<!-- <style>
     .mermaid {
         max-width: 200%;
         width: 200%; /* Make the diagram take full width */
@@ -65,7 +65,7 @@ By: Zaynap Ahmad
     .mermaid .node text {
         font-size: 16px; /* Increase font size for better readability */
     }
-</style>
+</style> -->
 
 ```mermaid
 graph TD;
