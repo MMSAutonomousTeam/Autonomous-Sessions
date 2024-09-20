@@ -9,7 +9,7 @@ By: Zaynap Ahmad
 * **Hardware - Software Integration**
 * **Hands-On Activity**
 
-## **1. System Components**
+**1. System Components**
 
 ### System Overview
 
