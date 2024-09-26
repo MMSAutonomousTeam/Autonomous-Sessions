@@ -71,8 +71,6 @@ In the context of technology, **autonomous systems** are machines or software th
 
 To have an idea of how autonomous systems look like let's start with and example:
 
-<video src='images\Autonomous_demonstration.mp4'>
-
 **Key characteristics of autonomous systems include:**
 
 * **👁‍🗨Perception** : Using sensors (like cameras, LiDAR, or radar), they can perceive their surroundings and collect real-time data.
@@ -161,7 +159,6 @@ Add the sink or stove example
 
 Add links to the examples
 
-
 ---
 
 #### Why Autonomous Systems Have Gained Popularity in Recent Years
@@ -172,12 +169,11 @@ Add links to the examples
 
 ### Challenges facing autonomous systems
 
-ethical challenges 
+ethical challenges
 
 ### Why should you study autonomous
 
 before the ending talk about the github and recording the sessions
-
 
 we will neded to add a section in the main readme saynig that this was for an offline training and not designed originally for broad learning
 
