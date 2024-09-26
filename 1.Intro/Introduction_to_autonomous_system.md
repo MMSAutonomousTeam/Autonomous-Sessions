@@ -76,7 +76,7 @@ To have an idea of how autonomous systems look like let's start with and example
 * **👁‍🗨Perception** : Using sensors (like cameras, LiDAR, or radar), they can perceive their surroundings and collect real-time data.
 * **🤷‍♂️Decision-making** : Through processing this data, they analyze situations and make decisions, often using artificial intelligence.
 * **🎬Action** : Based on decisions, they can execute tasks or actions, such as moving from point A to point B or performing a specific job.
-* **🐱‍🏍Independence** : They can make decisions and perform tasks without constant human guidance.
+* **🚶Independence** : They can make decisions and perform tasks without constant human guidance.
 * **📚Learning and Adaptability** : Advanced autonomous systems not only perform tasks based on pre-defined rules but can also learn from their experiences.
 
 ##### Autonomous VS Automatic Systems
@@ -99,13 +99,13 @@ The difference between an **automatic system** and an **autonomous system** lies
 
 Here is some examples to better understand what autonomous means and why it's important:
 
-![Sessions_overview](https://file+.vscode-resource.vscode-cdn.net/d%3A/Autonomous%20session/images/Autonomous_examples.png)
+![Sessions Examples](images/Autonomous_examples.png)
 
 ###### **Self-driving Cars (Autonomous Vehicles)** 🚗
 
 These vehicles can navigate roads, detect obstacles, follow traffic rules, and make decisions like lane changes or stopping at traffic signals without human intervention.
 
-**Example** : Tesla , Waymo
+**Example** : [Tesla]([https://www.tesla.com/support/autopilot]()) , Waymo
 
 ###### **Drones (Unmanned Aerial Vehicles)** 🛸
 
@@ -155,13 +155,24 @@ Used in manufacturing, these robots can assemble parts, weld, or move materials 
 
 **Example** : KUKA Robots, ABB Robotics
 
-Add the sink or stove example
+#### Let's think autonomous
 
-Add links to the examples
+To deepen our understanding of the concept of autonomous let's take an ordinary piece of machinary and turn it into an intellegent system that is capable of thinking and making decisions on its own.
+
+Let's look at the stove for example. Any one of us has a stove in his home and we all have used it before. So let's break down the tasks that the stove help us achieve. first it provides fire in an easy way also i can control the amount of heat and some stoves have timers that can be used to turn the heat off automaticaly after a certain period.
+
+Now let's break down the tasks that we as humans need to do to use the stove correctly. We need to put the ingredients of our recipe in a correct order to make the food we want. We also need to keep an eye on the stove in case of any emergancies or to shut it down before the food gets burnt. we also need to change the amount of heat during differnet stages of cooking.
+
+Finally let's use what we understood so far and try to implement our system on the stove. We start by adding some sensors to the stove to enable it to perceive the environment around it **(Perception).** after this we will develop some algorithms that can use the information we gather from the previous stage and provide us with the correct decision that should be taken **(Planning).** then we will add some actuators to perform the actions that the planning stage has ordered **(Control).** now we have a system that is capable of cooking a meal on its own **(Independence).** the final step to take our system to the next level is to make it able to learn from its mistakes **(Learning and Adaptability).**
+
+![Example](images/Stove.png)
+
+> **Now after we understood the concept of autonomous we should be able to turn any machine into a smart thinking system.**
 
 ---
 
 #### Why Autonomous Systems Have Gained Popularity in Recent Years
+
 
 ### What makes the autonomous task?
 
