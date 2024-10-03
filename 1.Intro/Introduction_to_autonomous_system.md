@@ -71,9 +71,7 @@ In the context of technology, **autonomous systems** are machines or software th
 
 To have an idea of how autonomous systems look like let's start with and example:
 
-**Video goes hereeeeeeeeeeeee**
-
-![video](videos/Introduction.mp4)
+![video](images/Introduction_thumbnail.png)(videos/Introduction.mp4)
 
 **Key characteristics of autonomous systems include:**
 
@@ -309,7 +307,7 @@ After we perform all the previous steps as humans which don't take much time to 
 
 To fully understand what maked the autonomous task let's watch this video that will help us understand the concepts that we talked about.
 
-**video goes hereeeeeeeeeee**
+![video](images/Autonomous_system_thumbnail.png)(videos/Autonomos_system.mp4)
 
 ---
 
