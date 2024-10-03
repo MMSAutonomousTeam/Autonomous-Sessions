@@ -257,6 +257,8 @@ after understanding what are the archetectures we could use to build the softwar
 
 **Frameworks** are reusable software platforms that provide a foundation for building applications. They offer pre-built components, tools, and guidelines to streamline the development process and enhance code quality. In the field of robotics, frameworks play a crucial role in simplifying the development of complex software systems.
 
+write that there are frameworks for application , middleware and so on
+
 **Key benefits of using frameworks in robotics:**
 
 * **Efficiency:** Frameworks provide pre-built components and tools, saving development time and effort.
@@ -279,14 +281,172 @@ after understanding what are the archetectures we could use to build the softwar
 | **ROS for Windows** | ROS version adapted for Windows                          | Windows compatibility, easier integration                | Component-based                  | Windows-based robotic software              |
 | **RoboDK**          | Simulation and offline programming for industrial robots | Easy integration with multiple languages                 | OOP, API-driven                  | Industrial robot programming, simulation    |
 
+add these : Yarp[5], Carmen[6], Player/Stage[
+
 ## ROS2
 
 finished the software lets put our software into work
 
+### what is ROS ?
+
+The meaning of the acronym ROS is Robot Operating System. It is not an operating system that replaces Linux or Windows but a middleware1 that increases the system’s capabilities to develop Robotic applications.
+
+The number 2 indicates that it is the second generation of this middleware
+
+Robot Operating System (ROS) is a set of open source algorithms, hardware driver software and tools developed to develop robot control software. Even though it has operating system in its name it is not an operating system[4]. It is
+
+* Communication System (Publish Subscribe and Remote Method Invocation),
+* Framework & Tools (Build system & dependency management, Visualization, Record and Replay)
+* Ecosystem (Language bindings, Drivers, libraries and simulation (Gazebo)).
+
+**currently ros has tow generations ROS1 and ROS2 each with its distributions**
+
+* ROS1 was used moslty for education and acadmeic research
+* ROS2 is for commercial robots
+
+ROS includes mature open source libraries to be used for navigation, control, motion planning, vision and simulation purposes. The 3D visualization tool called RVIS is an important tool used with ROS. Similarly, the simulation tool called Gazebo is seen as a usefull tool for robot developers. Apart from this, Open CV library is a library used for detection purposes in ROS 2
+
+<div align="center">
+  <img src="images/ros2_libraries.webp" alt="ros2 libraries" style="width: 70%; max-width: 800px;">
+</div>
+
+## ROS 2 Architecture
+
+The ROS 2 has distributed real-time system architecture. Sensors in robots, motion controllers, detection algorithms, artificial intelligence algorithms, navigation algorithms, etc are all components (called as node) of this distributed architecture. The DDS middleware selected with ROS 2 for data exchange enables these components to communicate with each other in a distributed environment.
+
+### different between ros1 and ros2
+
+<div align="center">
+  <img src="images/different_betweenros1andros2.png" alt="ros1 and ros2 " style="width: 70%; max-width: 800px;" >
+</div>
+
+**Compared with ROS1, the main differences are** :
+
+* ROS1 mainly supports Linux-based operating system.
+* ROS2 provides more portability of deployment on underlying operating systems, such as Linux, Windows, Mac, and RTOS.
+* ROS data transport protocol uses TCPROS/UDPROS, and communication is highly dependent on the operation of Master node.
+* Communication in ROS2 is based on DDS (Data Distribution Service) standard, enhancing fault tolerance capabilities.
+* Intra-process in ROS2 provides more optimized transmission mechanism.
+
+### ROS2 has three main dimentions
+
+#### The Community:
+
+ The ROS community is a fundamental element when developing applications for robots with this middleware. In addition to providing
+technical documentation, there is a vast community of developers who contribute with their own applications and utilities through public repositories, to
+which other developers can contribute. Another member of the community may
+have already developed something you need.
+
+#### Computation Graph:
+
+The Computational Graph is a running ROS 2 application.
+This graph is made up of nodes and arcs.
+The Node, the primary computing units in ROS 2, can collaborate with other nodes using several diferent communication paradigms to compose a ROS 2 application.
+This dimension also addresses the monitoring tools, which are also nodes that are inserted in this graph.
+
+#### The Workspace:
+
+The Workspace is the set of software installed on the robot
+or computer, and the programs that the user develops. In contrast to the Computational Graph, which has a dynamic nature, the Workspace is static. This
+dimension also addresses the development tools to build the elements of the
+Computational Graph.
+
+**we will proceed with the comoutaion graph**
+
+#### how the node could talk to each other :
+
+A node can access the Computation Graph and provides mechanisms to communicate with other nodes through 3 types of paradigms:
+
+#### Publication/Subscription:
+
+It is an asynchronous communication, where N nodes publish messages to a topic that reaches its M subscribers.
+A topic is like a communication channel that accepts messages of a unique type.
+This type of communication is the most common in ROS 2.
+A very representative case is the node that contains the driver of a camera that publishes images to a topic.
+All the nodes in a system needing images from the camera to carry out their function subscribe to this topic.
+
+image
+
+code example
+
+#### Services:
+
+It is a asynchronous communication4 in which a node requests another node and expect an inmediate response.
+This communication usually requires an immediate response so as not to afect the control cycle of the node that calls the service.
+An example could be the request to the mapping service to reset a map, with a response indicating if the call succeeded.
+
+image
+
+code example
+
+#### Actions:
+
+These are asynchronous communications in which a node makes a request to another node.
+These requests usually take time to complete, and the calling node may periodically receive feedback or the notifcation that it has fnished successfully or with some error.
+A navigation request is an example of this type of communication. This request is possibly time-consuming, whereby the node requesting the robot to navigate should not be blocked while completing.
+
+image
+
+code example 
+
+### this how the nodes could talk to each other but how the node actually works ?
+
+The function of a node in a computational graph is to perform processing or control.
+Therefore, they are considered active elements with some alternatives in terms of their execution model:
+
+#### Iterative execution:
+
+It is popular in the control software for a node to execute its control cycle at a specifc frequency.
+This approach allows controlling how many computational resources a node requires, and the output fow remains constant.
+For example, a node calculating motion commands to actuators at 20 Hz based on their status.
+
+code examble and image
+
+#### Event-oriented execution:
+
+The execution of these nodes is determined by the frequency at which certain events occur, in this case, the arrival of messages at this node.
+For example, a node that, for each image it receives, performs detection on it and produces an output.
+The frequency at which an output occurs depends on the frequency at which images arrive.
+If no images reach it, it produces no output.
+
+code example and image 
+
+### layed archetecture
+
+<div align="center">
+  <img src="images/ros2layers.png" alt="ros2 archetecture" style="width: 70%; max-width: 800px;" >
+</div>
+
+### DDS
+
+ROS 2 uses DDS as its middleware. DDS reduces coupling, increases scalability, and improves performance, reliability, security, and flexibility
+
+DDS used moslty in defense industry
+
+ROS 2 has provided its own abstraction layer (rmw) on top of DDS instead of directly using the DDS middleware. Thus, the details of the DDS middleware interface are abstracted from the user.  =In the current ROS 2 versions, Fast-DDS comes as the standard DDS version
+
+<div align="center">
+  <img src="images/dds-overview.jpg" alt="ros2 dds overview" style="width: 70%; max-width: 1000px;">
+</div>
+
+### ROS2 client library
+
+ROS 2 applications access ROS 2 features through the ROS Client Library (RCL) client library. The Rcl library is written in C language and on it there are Rclcpp client libraries for C ++ language and Rclpy for Python language. There are independently written ROS 2 client libraries in other languages such as Java, Go. The client library is primarily provided with the standard interface required to exchange data with Topic and Service approaches over ROS 2. In addition, the ROS2 library has capabilities to provide operating system abstraction and ready-made micro-architectural structures.
+
+<div align="center">
+  <img src="images/DDS_and_clientlib.webp" alt="ros2 dds and clientlib" style="width: 70%; max-width: 500px;">
+</div>
+
 ## embedded boards used in robotics
+
+
 
 ## hardware - software integration
 
 <div align="center">
   <img src="images/hardware-software.png" alt="system archetcture" style="width: 80%; max-width: 1000px;">
 </div>
+
+## **references :**
+
+4.https://medium.com/software-architecture-foundations/robot-operating-system-2-ros-2-architecture-731ef1867776
