@@ -73,6 +73,8 @@ To have an idea of how autonomous systems look like let's start with and example
 
 **Video goes hereeeeeeeeeeeee**
 
+![video](videos/Introduction.mp4)
+
 **Key characteristics of autonomous systems include:**
 
 * **👁‍🗨Perception** : Using sensors (like cameras, LiDAR, or radar), they can perceive their surroundings and collect real-time data.
@@ -180,7 +182,8 @@ Autonomous systems have become a major trend due to advancements in technology, 
 > **The fact is autonomous systems have been around for some decades now and it's not a new concept that just appeared.**
 
 It all started with **shakey the robot**. Developed at Stanford Research Institute (SRI), **Shakey** is often considered the first autonomous robot. Shakey could navigate its environment, make decisions, and perform simple tasks like moving objects based on sensor data, marking a significant step in autonomous robotics.
-                                              ![Shakey](images/Shakey.png)
+
+![Shakey](images/Shakey.png)
 
 > **So since autonomous systems have been around for this long why is it trending now?**
 
@@ -249,7 +252,7 @@ This step is is called **perception** and while you have **eyes** helping you do
 
 It's another task that we as human **perform naturally** without us noticing and this task is called **SLAM** whih is **mapping** the environment around us and knowing our **location** in this environment. **when you take a look around from your vehicle you perform a quick scan locating every object around you and where it is relative to you**. this is exactly what **SLAM** does in our system.
 
-#### **SLAM (Simultaneous Localization and Mapping)**🌍
+#### **SLAM (Simultaneous Localization and Mapping)** 🌍
 
  **Definition** : SLAM is the process where an autonomous system maps its environment while simultaneously figuring out its position within that map. SLAM helps the system "localize" itself and build a map of its surroundings at the same time.
 
@@ -488,7 +491,9 @@ To deepen your understanding and explore more about autonomous systems, here are
 If you have any questions or need further clarification about anything in this documentation, feel free to get in touch. We're here to help you on your journey into the world of autonomous systems!
 
 You can contact us at:
+
 📧  **Email** : mmsautonomousteam@gmail.com
+
 🌐  **GitHub Issues** : [github](https://github.com/MMSAutonomousTeam/Autonomous-Sessions/issues)
 
 We're excited to support you and look forward to your questions! 😊
