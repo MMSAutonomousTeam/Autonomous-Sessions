@@ -12,11 +12,12 @@ We hope this trainning will give you a deep understanding of the field, inspire 
 
 ### About the instructor
 
-👋 Hi! I'm **Yousef Asal**
+👋 Hi! I'm **[Yousef Asal](https://github.com/Yousef-Asal)**
 
 * 🎓 Mechatronics Level 300
 * 🧠  autonomous member (SLAM) 23-24
 * 🤖 Autonomous Head 24-25
+* 🔗Contact me: [LinkedIn](https://www.linkedin.com/in/yousefasal/)
 
 ---
 
@@ -26,9 +27,9 @@ We hope this trainning will give you a deep understanding of the field, inspire 
 
 🔢 Number of sessions: 6
 
-🗓 Days:
+🗓 Days: Saturday, Monday, Wednesday
 
-⏲ Time:
+⏲ Time: 3.15 pm
 
 ---
 
@@ -43,11 +44,11 @@ This training will walk you through the main building blocks of autonomous syste
 3. **Simultaneous Localization and Mapping (SLAM)** :
    This module covers how autonomous systems build maps of their surroundings while figuring out their own position within that space. SLAM is essential for navigation and is used in robots, drones, and self-driving cars.
 4. **Motion Planning** :
-   We’ll look at how systems plan their movements, taking into account obstacles and finding the most efficient path to their goal. This involves algorithms that predict future positions and make decisions in real time.
+   We'll look at how systems plan their movements, taking into account obstacles and finding the most efficient path to their goal. This involves algorithms that predict future positions and make decisions in real time.
 5. **Control** :
    In this section, we'll discuss how systems take their planned path and turn it into real actions. Control ensures the system adjusts its movements and stays on course despite changes in the environment.
 6. **System Integration and Tools** :
-   Finally, we'll explore how all the parts (perception, SLAM, planning, control) come together into a functioning system. We'll also introduce tools and frameworks like ROS (Robot Operating System) and Gazebo for simulation and testing.
+   Finally, we'll explore how all the parts (perception, SLAM, planning, control) come together into a functioning system. We'll also introduce tools and frameworks like ROS (Robot Operating System) for simulation and testing.
 
 ![Sessions_overview](images/Sessions_overview.png)
 
@@ -159,7 +160,7 @@ Used in manufacturing, these robots can assemble parts, weld, or move materials 
 
 #### Let's think autonomous💁
 
-To deepen our understanding of the concept of autonomous let's take an ordinary piece of machinary and turn it into an intellegent system that is capable of thinking and making decisions on its own.
+To deepen our understanding of the concept of autonomous let's take an **ordinary piece of machinary** and turn it into an **intellegent system** that is capable of thinking and making decisions on its own.
 
 Let's look at the stove for example. Any one of us has a stove in his home and we all have used it before. So let's break down the tasks that the stove help us achieve. first it provides fire in an easy way also i can control the amount of heat and some stoves have timers that can be used to turn the heat off automaticaly after a certain period.
 
@@ -187,6 +188,8 @@ It all started with **shakey the robot**. Developed at Stanford Research Institu
 
 the answer for this question can be summed up in one sentence "the advancements inn recent technologies". especially the great improvements that happened in the AI field.
 
+![Autonomous trend](images/Trend.png)
+
 ##### **Advancements in AI and Machine Learning💻**
 
 **Artificial Intelligence (AI)** and **machine learning** have made it possible for systems to analyze vast amounts of data and make decisions in real-time. AI enables autonomous systems to learn from their experiences, improving over time and adapting to new environments. This ability to evolve and become more efficient has made autonomy more feasible and reliable than ever before.
@@ -211,9 +214,11 @@ Autonomous systems can play a significant role in reducing environmental impact.
 
 Autonomous systems are often used in environments that are dangerous or inaccessible to humans, such as deep-sea exploration, space missions, or hazardous factory settings. They help minimize the risk to human life by performing tasks that would be too risky for people. In transportation, autonomous vehicles promise to reduce accidents by eliminating human errors, which are a leading cause of traffic collisions.
 
-![Autonomous trend](images/Trend.png)
-
 Of course these are not all the technologies driving autonomous systems forward but we just demonstrated some important points that had a great impact on developing autonomous systems.
+
+---
+
+
 
 ### What makes the autonomous task?
 
