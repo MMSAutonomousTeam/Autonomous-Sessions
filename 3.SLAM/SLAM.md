@@ -63,7 +63,7 @@ is a device used to convert motion such as rotation into an electrical signal, w
 
 ![1727974657784](image/SLAM/1727974657784.png)
 
-![1727974872682](image/SLAM/1727974872682.png)
+![1727974872682](3.SLAM/b681885c-96e1-4dc4-81df-c8f4188aded6.jpeg)
 
 A rotary encoder is attached to a rotating shaft, and it detects the angle or speed of rotation.
 
