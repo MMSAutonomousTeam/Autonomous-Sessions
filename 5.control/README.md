@@ -20,6 +20,8 @@
 
 First of all we know in the last sessions the process of building an autonomous vehicle consist of  four main stages starting with perception then SLAM after that Path Planning ending with control, and we had known what is the job of each stage its chalanges ,tools, etc. Now its control stage turn
 
+<img src="image/README/1727231646803.png"alt="google logo">
+
     ![1727231646803](image/README/1727231646803.png)
 
 Before we start going ahead in our session we should take an over view about control in general, learn and recap about imporant topics starting with :
@@ -189,9 +191,167 @@ PID controllers has three different components :
 
 ## 3.**MATHEMATICAL MODELING**
 
+Mathematical modeling of a system refers to the notion of describing the response of a system to the control inputs while accounting the state of the system using mathematical equations. The following analogy of an autonomous vehicle better explains this notion. When control inputs are applied to an autonomous vehicle, it moves in a very specific way depending upon the control inputs. For example, throttle increases the acceleration, brake reduces it, while steering alters the heading of the vehicle by certain amount. A mathematical model of such an autonomous vehicle will represent the exact amount of linear and/or angular displacement, velocity, acceleration, etc. of the vehicle depending upon the amount of applied throttle, brake and/or steering input.
+
+![1728051193259](image/README/1728051193259.png)
+
+In order to actually develop a mathematical model of autonomous vehicle (or any system for that matter), ***there are two methods widely used in industry and academia***.
+
+#### 1. First Principles Modeling
+
+This approach is concerned with applying the fundamental principles and constituent laws to derive the system models. It is a theoretical way of dealing with mathematical modeling, which does not necessarily require access to the actual system and is mostly adopted for deducing generalized mathematical models of the concerned system. We will be using this approach in the upcoming section to formulate the kinematic and dynamic models
+
+#### 2. Modeling by System Identification
+
+This approach is concerned with applying known inputs to the system, recording it’s responses to those inputs and statistically analyzing the input-output relations to deduce the system models. This approach is a practical way of dealing with mathematical modeling, which requires access to the actual system and is mostly adopted for modeling complex systems, especially where realistic system parameters are to be captured. It is to be noted that this approach is often helpful to estimate system parameters even though the models are derived using first principles approach.
+
+We make the following assumptions and consider the following motion constraints for modeling the vehicle.
+
+### Assumptions:
+
+1. The road surface is perfectly planar, any elevations or depressions are disregarded. This is known as the planar assumption.
+2. Front and rear wheels are connected by a rigid link of fixed length.
+3. Front wheels are steerable and act together, and can be effectively represented as a single wheel.
+4. Rear wheels act together and can be effectively represented as a single wheel.
+5. The vehicle is actually controllable like a bicycle.
+
+### Motion Constraints:
+
+1. Pure Rolling Constraint: This constraint implies the fact that each wheel follows a pure rolling motion w.r.t. ground; there is no slipping or skidding of the wheels.
+2. Non-Holonomic Constraint: This constraint implies that the vehicle can move only along the direction of heading and cannot arbitrarily slide along the lateral direction.
+
+*note: We will be using First Principles Modeling approach in the upcoming section to formulate the kinematic and dynamic models of a front wheel steered non-holonomic vehicle.*
+
+### 1.Kinematic Modelling
+
+It is simple mathematical representation of the car model that doesn’t take all the forces and moments acting on the car into account but simplify the car model equations,In this section, we present two of the most widely used kinematic model for autonomous vehicles.
+
+#### 1.1 Differential Kinematic Model
+
+We represent the car as a simple nonholonomic body with two wheels at the sides.The motion of the car is governed by the following equations.If the two wheels are rotating at the same speed, the car will move in a straight line, but if one of the wheels is rotatingwith a speed higher than the other, the car will rotate aroundthe slower wheel with a speed of `X’` and `Y’`, the car will alsorotate with an angle `𝜃` and with a rotating speed `𝜃′`.
+
+![1728052882889](image/README/1728052882889.png)
+
+#### 1.2  Kinematic Bicycle Mode
+
+Modelwe represent the car as a bicycle where the front wheels and rear wheels are merged into a single wheel. This model is more accurate than the differential model and widely used.There are three ways of deriving the mathematical model where we choose different reference point for the car calculations:
+
+![1728053019284](image/README/1728053019284.png)
+
+### **2.Dynamic Modelling**
+
+**A **more complex** and accurate representation of the car model where we take all the **acting forces** and **moments** into account. In this section, we present two of the most widely used Dynamic model for autonomous vehicles.**
+
+#### 2.1 Longitudinal Model
+
+The free-body diagram of an autonomous vehicle along the longitudinal direction (denoted as x) is depicted in figure 1.3. The longitudinal forces considered include
+vehicle inertial term `m` * `x''`, front and rear tire forces ` Fxf` and `Fxr`, aerodynamic resistance `Faero`, front and rear rolling resistance `Rxf` and `Rxr`, and x component of
+the gravitational force `m` * `g` * `sin (alpha)` (since y component of the gravitational force `m` * `g` * `cos (alpha)` and normal force `FN` cancel each other). **Note that the tire forces
+assist the vehicle to move forward whereas all other forces resist the forward vehicle motion.**
+
+![1728053682877](image/README/1728053682877.png)
+
+#### 2.2 **Lateral Model**
+
+The free-body diagram of an autonomous vehicle along the lateral direction (denoted as y) is depicted in the figure. The lateral forces considered include the inertial term
+`m` * `ay` and the front and rear tire forces Fyf and Fyr, respectively. The torques considered include vehicle torque about instantaneous center of rotation `Iz` * `theta''`, and
+moments of front and rear tire forces `lf` * `Fyf` and `lr` * `Fyr`, respectively (acting in opposite direction). Thus, applying Newton’s second law of motion to the free-body
+diagram we get.
+
+![1728054013594](image/README/1728054013594.png)
+
+* for more details of the four methods and its mathmatical equation representaion you can find it in **[CONTROL STRATEGIES FOR AUTONOMOUS VEHICLES](https://arxiv.org/pdf/2011.08729)** book in the sources section.
+
 ## 4.Pure pursuit
 
+The pure pursuit method consists of geometric path tracking controller, calculating the curvature of a circular arc that connects the rear axle location to a goal point on the path ahead of the vehicle, Depend on eliminating ***cross track*** error only .
+
+If we consider the center of the rear axle of the ego vehicle as the frame of reference,we have the geometric relations as shown in the figure Here, the ego vehicle wheelbase
+is `L`, forward velocity of the ego vehicle is ` vf` , steering angle of the ego vehicle is `gamma`, distance between lookahead point on reference trajectory and the center of the
+rear axle of the ego vehicle is the lookahead distance `dl`, the angle between vehicle heading and the lookahead line is `alpha`. Since the vehicle is a rigid body with forward
+steerable wheels, for non-zero `vf `and `delta`, the vehicle follows a circular path of radius `R` (corresponding to curvature `k`) about the instantaneous center of rotation (`ICR`).
+
+![1728058331206](image/README/1728058331206.png)
+
+mathmatical equation representaion of pure pursuit controller:
+
+reference to up figure & from the law of sines,
+
+![1728060419447](image/README/1728060419447.png)
+
+* `k`  called curve curvature its like a parameters we use in our equations.
+* `e delta` is the cross track error.
+
+With reference to up figure the steering angle command `delta` can be computed using the following relation,
+
+![1728060885967](image/README/1728060885967.png)
+
+Substituting the value of `k` from curve curvature equation in steering angle equation and solving for `delta`we get,
+
+![1728061022189](image/README/1728061022189.png)
+
+one of the most important parameter that affect on the behavior of the controller is look ahead distance param `ld` or `dl` (both the same) ,how?
+
+1. samll look ahead
+   1. oscillatory path
+   2. accurate tracking
+      ![1728061356445](image/README/1728061356445.png)
+2. large lookahead distance
+   1. less oscilatory path
+   2. poor tracking
+
+      ![1728061367933](image/README/1728061367933.png)
+
+to fix this we need to make it adaptive,how?
+
+the steering law is independent of vehicle velocity ,As a result, if the controller is tuned for low speed, it will be dangerously aggressive at higher speeds while if tuned for
+high speed, the controller will be too sluggish at lower speeds. One potentially simple improvement would be to vary the lookahead distance `dl` proportional to the vehicle
+velocity `vf` using `kv` as the ***proportionality constant*** (this constant/gain will act as the ***tuning parameter*** for Pure Pursuit controller).
+
+![1728061678224](image/README/1728061678224.png)
+
+Substituting the value of dl from steering angle equation in up equation we get the completecoupled Pure Pursuit control law formulation as follows.
+
+![1728061788607](image/README/1728061788607.png)
+
+
 ## 5.Stanley
+
+The Stanley method is a path tracking approach used by Stanford University’s autonomous vehicle entry in the DARPA Grand Challenge Team,uses the center of the front axes as a reference point,Depend on eliminating both,*cross track* *error* and*heading error.*
+
+![1728063467535](image/README/1728063467535.png)
+
+If we consider the center of the ***front axle*** of the ego vehicle as the frame of reference, we have the geometric relations as shown in up figure. Here, the ego vehicle
+wheelbase is `L`, forward velocity of the ego vehicle is `vf` , and steering angle of the ego vehicle is `delta`.
+
+Stanley control law, therefore, is essentially defined to meet the following ***three requirements***.
+
+1. Heading Error Correction: To correct the heading error `e psi` by producing asteering control action `delta` proportional (or equal) to it, such that vehicle heading aligns with the desired heading.
+
+   ![1728066355036](image/README/1728066355036.png)
+2. Cross-Track Error Correction: To correct the cross-track error `e delta` by producing a steering control action `delta` directly proportional to it and inversely proportional
+   to the vehicle velocity `vf` in order to achieve coupled-control. Moreover, the effect for large cross-track errors can be limited by using an inverse tangent function.
+
+   ![1728066463807](image/README/1728066463807.png)
+
+   we might have 2 problem here:
+
+   1. At lower speeds, the denominator becomes small, thus causing the steering command to shoot to higher values, which is undesirable considering human
+      comfort. Hence, an extra softening coefficient `ks` may be used in the denominator as an additive term in order to keep the steering commands smaller for
+      smoother steering actions.
+   2. On the contrary, at higher velocities, the denominator becomes large making the steering commands small in order to avoid large lateral accelerations. However,
+      even these small steering actions might be high in some cases, causing high lateral accelerations. Hence, an extra damping coefficient `kd` may be used in
+      order to dampen the steering action proportional to vehicle velocity.
+
+   so the result equation is,
+
+   ![1728066784813](image/README/1728066784813.png)
+3. Clipping Control Action: To continuously observe the steering actuation limits [−`delta` max, `delta` max] and clip the steering command within these bounds.
+
+   the final stanley controller form:
+
+![1728066891888](image/README/1728066891888.png)
+
 
 ## 6.sources
 
@@ -201,7 +361,7 @@ PID controllers has three different components :
 
 [PID Tuning Guide ](https://tlk-energy.de/blog-en/practical-pid-tuning-guide)
 
-[CONTROL STRATEGIES FOR AUTONOMOUS VEHICLES](https://arxiv.org/pdf/2011.08729)
+[CONTROL STRATEGIES FOR AUTONOMOUS VEHICLES](https://arxiv.org/pdf/2011.08729 "1")
 
 [Introduction to Control EE313 - YouTube](https://www.youtube.com/playlist?list=PLmK1EnKxphikZ4mmCz2NccSnHZb7v1wV-)
 
