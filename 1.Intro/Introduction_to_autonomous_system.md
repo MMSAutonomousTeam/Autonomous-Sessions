@@ -50,7 +50,7 @@ This training will walk you through the main building blocks of autonomous syste
 6. **System Integration and Tools** :
    Finally, we'll explore how all the parts (perception, SLAM, planning, control) come together into a functioning system. We'll also introduce tools and frameworks like ROS (Robot Operating System) for simulation and testing.
 
-![Sessions_overview](images/Sessions_overview.png)
+<img src="images/Sessions_overview.png" >
 
 ---
 
@@ -102,7 +102,7 @@ The difference between an **automatic system** and an **autonomous system** lies
 
 Here is some examples to better understand what autonomous means and why it's important:
 
-![Sessions Examples](images/Autonomous_examples.png)
+<img src="images/Autonomous_examples.png" width="1000" >
 
 ##### **Self-driving Cars (Autonomous Vehicles)** 🚗
 
@@ -188,7 +188,7 @@ It all started with **shakey the robot**. Developed at Stanford Research Institu
 
 the answer for this question can be summed up in one sentence "the advancements inn recent technologies". especially the great improvements that happened in the AI field.
 
-![Autonomous trend](images/Trend.png)
+<img src="images/Trend.png" width="800" >
 
 ##### **Advancements in AI and Machine Learning💻**
 
@@ -251,7 +251,7 @@ This step is is called **perception** and while you have **eyes** helping you do
 
 > **Okay now what is the next step that our vehicle should perform?**
 
-![SLAM](images/SLAM.png)
+<img src="images/SLAM.png" width="600" >
 
 It's another task that we as human **perform naturally** without us noticing and this task is called **SLAM** whih is **mapping** the environment around us and knowing our **location** in this environment. **when you take a look around from your vehicle you perform a quick scan locating every object around you and where it is relative to you**. this is exactly what **SLAM** does in our system.
 
@@ -290,7 +290,8 @@ We as humans after knowing the environment around us we will try to find the **b
 
 > **After all these steps we the vehicle is still in the start position and didn't start moving yet so the next step should be actually moving the vehicle along the path we had planned.**
 
-![Control](images/Control.png)
+<img src="images/Control.png" width="600" >
+
 
 After we perform all the previous steps as humans which don't take much time to perform we start **steping on the gas pedal** to move the car. this is **vehicle control** and it doesn't only control **throttle** but also **brakes**, **steering** and any other action that we perform as humans the control system should be able to **dublicate our actions.**
 
@@ -344,13 +345,13 @@ When categorizing the level of autonomy, we consider:
 
 These criteria help differentiate between the six levels of autonomy, which range from **no automation** to  **full automation** .
 
-![Autonomous_criteria](images/Autonomous_criteria.png)
+<img src="images/Autonomous_criteria.png" width="1000" >
 
 ---
 
 #### **The Six Levels of Autonomy** 📈
 
-![Levels_of_autonomy](images/Levels_of_autonomy.png)
+<img src="images/Levels_of_autonomy.png" >
 
 1. **Level 0: No Automation**
    * **Human Involvement** : Full control by a human.
@@ -395,7 +396,7 @@ Autonomous systems rely heavily on sensors like cameras, LiDAR, radar, and ultra
 * **Limited Range and Resolution** : Many sensors have restricted ranges or resolutions. For example, radar may detect distant objects but struggle with detail, while cameras can capture fine details but have limited range, especially in low light.
 * **Data Fusion Complexity** : Autonomous systems often combine data from multiple sensors (sensor fusion) to create an accurate view of the environment. This process is complex and prone to errors if the data from different sensors don't align perfectly, leading to inconsistencies in decision-making.
 
-![Sensor_limitation](images/Sensor_limitation.png)
+<img src="images/Sensor_limitation.png" width="1000" >
 
 ---
 
@@ -407,7 +408,7 @@ Autonomous systems generate vast amounts of data in real time, which must be pro
 * **Latency** : Delays in processing or transmitting data can cause the system to react too slowly to changing situations, which can lead to accidents or system failures. Reducing latency in decision-making is critical.
 * **Complex Environments** : The system must navigate dynamic and unpredictable environments. Whether it's detecting a pedestrian crossing the street or avoiding an obstacle in a factory, the system needs to interpret the data and act almost instantaneously.
 
-![Decision_making](images/Decision_making.png)
+<img src="images/Decision_making.png" width="1000" >
 
 ---
 
@@ -418,7 +419,7 @@ Autonomous systems, especially vehicles, rely on more than just onboard technolo
 * **Smart Infrastructure** : Autonomous vehicles may require smart traffic signals, specialized lanes, and communication systems that allow vehicles to “talk” to the surrounding infrastructure. Cities will need to adapt to accommodate these systems.
 * **Road Quality and Markings** : Many autonomous systems depend on clear road markings, signs, and consistent infrastructure. In areas with poor infrastructure or unclear road conditions, autonomous systems may struggle to navigate safely.
 
-![Urban_adaptation](images/Urban_adaptation.png)
+<img src="images/Urban_adaptation.png" width="1000" >
 
 ---
 
@@ -430,7 +431,7 @@ The rise of autonomous systems brings up numerous ethical and legal questions th
 * **Accountability and Legal Liability** : When an autonomous system causes harm or fails, determining who is responsible becomes a complex legal issue. Is it the manufacturer, the operator, or the software developer? Legal frameworks need to evolve to address these questions.
 * **Privacy Concerns** : Autonomous systems often collect large amounts of data about their environment, which can include personal information about individuals (e.g., video footage of pedestrians). Ensuring privacy while gathering necessary data is a critical ethical concern.
 
-![Ethical_challenges](images/Ethical_challenges.png)
+<img src="images/Ethical_challenges.png" width="1000" >
 
 > **Who you think is responsible if an autonomous system fails and causes harm?**
 > a) The person who buys the system
@@ -444,7 +445,7 @@ The rise of autonomous systems brings up numerous ethical and legal questions th
 
 Ok let's end this demonstration with an important question. why should you study autonomous. we'll assume that most people reading this document are in **mechatronics, computer science engineering** or any other field that is related to programming and software. so why should be interested in this field. one word for this which is **opportunities.** Autonomous field is not as popular such as **embedded systems or web development** for example and that's because it's still developing and it's kinda hard and takes a good amount of time to get comfortable with. but if you there's no better time than now to start getting in the field.
 
-![Opportunity](images/Opportunity.png)
+<img src="images/Opportunity.png" width="600" >
 
 and for people who are sceptecal here's some companies that work in autonomous systems either in robotics or self-driving cars:
 
