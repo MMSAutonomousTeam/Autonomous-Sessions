@@ -364,17 +364,29 @@
 
 
 1. Which machine learning step involves adjusting parameters to minimize error during training?
+   
    a)	Feature extraction
+   
    b)	Hyperparameter tuning
+   
    c)	Gradient descent
+   
    d)	Image preprocessing
+   
    Answer: c) Gradient descent
+
 4. In which type of image are pixel values limited to black and white?
+   
    a)	Grayscale image
+   
    b)	Color image
+   
    c)	Binary image
+   
    d)	Infrared image
+   
    Answer: c) Binary image
+   
 5. Which of the following sensors works by sending beams of light to measure distance?
    a)	Camera
    b)	RADAR
