@@ -61,7 +61,7 @@ is a device used to convert motion such as rotation into an electrical signal, w
 
 **How encoder works?**
 
-![2](images/2.png)
+![2](images/2.gif)
 
 ![3](images/3.jpeg)
 
