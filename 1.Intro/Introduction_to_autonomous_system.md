@@ -218,8 +218,6 @@ Of course these are not all the technologies driving autonomous systems forward 
 
 ---
 
-
-
 ### What makes the autonomous task?
 
 Now we want to breakdown our system into some components and tasks so we can easly build our autonomous system.
@@ -291,7 +289,6 @@ We as humans after knowing the environment around us we will try to find the **b
 > **After all these steps we the vehicle is still in the start position and didn't start moving yet so the next step should be actually moving the vehicle along the path we had planned.**
 
 <img src="images/Control.png" width="600" >
-
 
 After we perform all the previous steps as humans which don't take much time to perform we start **steping on the gas pedal** to move the car. this is **vehicle control** and it doesn't only control **throttle** but also **brakes**, **steering** and any other action that we perform as humans the control system should be able to **dublicate our actions.**
 
