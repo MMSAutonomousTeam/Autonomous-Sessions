@@ -386,78 +386,147 @@
    d)	Infrared image
    
    Answer: c) Binary image
-   
+
 5. Which of the following sensors works by sending beams of light to measure distance?
+   
    a)	Camera
+   
    b)	RADAR
+   
    c)	LIDAR
+   
    d)	Ultrasonic sensor
+   
    Answer: c) LIDAR
+
 6. Which of the following is an essential part of the computer vision pipeline?
+
    a)	Depth estimation
+  
    b)	Path planning
+  
    c)	Feature extraction
+  
    d)	Data fusion
+  
    Answer: c) Feature extraction
+
 7. Which of the following is an issue when using cameras in adverse weather conditions?
+  
    a)	Overheating
+  
    b)	Signal reflection
+  
    c)	Low resolution
+  
    d)	Poor image quality due to rain or fog
+  
    Answer: d) Poor image quality due to rain or fog
     
 8. Which feature of a sensor enables the detection of motion and changes in velocity?
+  
    a)	Ultrasonic sensor
+  
    b)	IMU (Inertial Measurement Unit)
+  
    c)	LIDAR
+  
    d)	Stereo camera
+  
    Answer: b) IMU (Inertial Measurement Unit)
+
 9. What is the primary function of the feature detection step in the computer vision pipeline?
+   
    a)	To classify objects
+   
    b)	To preprocess images
+   
    c)	To identify important points of interest in an image
+   
    d)	To measure depth in an image
+   
    Answer: c) To identify important points of interest in an image
+
 10. What is the key advantage of using stereo cameras in autonomous vehicles?
+   
     a)	Detecting speed
+   
     b)	Cost-effectiveness
+   
     c)	Depth estimation
+   
     d)	High resolution in low-light conditions
+   
     Answer: c) Depth estimation
+
 11. Which component of a digital image represents the smallest unit of brightness and color?
+   
     a)	Pixel
+   
     b)	Frame
+   
     c)	Histogram
+   
     d)	Filter
+   
     Answer: a) Pixel
+
 12. Which step in the computer vision pipeline is used to improve image contrast and detail?
+   
     a)	Thresholding
+   
     b)	Histogram equalization
+   
     c)	Noise removal
+   
     d)	Feature extraction
+   
     Answer: b) Histogram equalization
+
 13. What is the main advantage of using a convolutional neural network (CNN) in perception tasks?
+   
     a)	It can process high-dimensional data efficiently
+   
     b)	It requires no training
+   
     c)	It is a low-cost solution
+   
     d)	It uses fewer sensors
+   
     Answer: a) It can process high-dimensional data efficiently
+
 14. What is the primary difference between a grayscale image and a color image?
+   
     a)	Grayscale images use more pixels than color images
+   
     b)	Grayscale images store brightness values, while color images store RGB values
+   
     c)	Grayscale images are harder to process
+   
     d)	Color images only have two brightness values
+   
     Answer: b) Grayscale images store brightness values, while color images store RGB values
+
 15. Which type of image is most simple to process and analyze in computer vision?
+    
     a)	Grayscale image
+    
     b)	Color image
+    
     c)	Binary image
+    
     d)	Depth image
+    
     Answer: c) Binary image
+
 16. What is the purpose of the cost function in a machine learning model?
 
-    To measure how well the model fits the data
+    a)   To measure how well the model fits the data
+
     b)	To calculate the total processing power needed
+
     c)	To determine the accuracy of object detection
+
     d)	To train the model for image preprocessing
+    
     Answer: a) To measure how well the model fits the data
