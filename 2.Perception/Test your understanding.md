@@ -1,28 +1,51 @@
 # Questions
 
 1. What is the role of perception in autonomous systems?
+
    a) To plan the motion of the car
+
    b) To detect and understand the environment
+
    c) To control the car's steering
+
    d) To interpret human speech
+
    **Answer** : b) To detect and understand the environment
+
 1. Which of the following is NOT an example of perception in an autonomous car?
+
    a) Detecting drivable space
+
    b) Knowing where lanes are
+
    c) Identifying other vehicles
+
    d) Calculating fuel efficiency
+
    **Answer** : d) Calculating fuel efficiency
+
 1. What is perception mainly concerned with in autonomous systems?
+   
    a) Navigation
+   
    b) Communication
+   
    c) Sensing the environment and objects
+   
    d) User interaction
+   
    **Answer** : c) Sensing the environment and objects
+
 1. Perception helps autonomous systems understand...
+   
    a) User preferences
+   
    b) Surrounding objects and their positions
+   
    c) Weather conditions
+   
    d) Voice commands
+   
    **Answer** : b) Surrounding objects and their positions
 1. Which of these is an example of a static object in the perception system of an autonomous car?
    a) Pedestrians
