@@ -1,6 +1,18 @@
 # Questions
 
-1. What is the role of perception in autonomous systems?a)	To plan the motion of the carb)	To detect and understand the environmentc)	To control the car's steeringd)	To interpret human speechAnswer: b) To detect and understand the environment
+1. What is the role of perception in autonomous systems?
+
+a)	To plan the motion of the car
+
+b)	To detect and understand the environment
+
+c)	To control the car's steering
+
+d)	To interpret human speech
+
+Answer: b) To detect and understand the environment
+
+
 2. Which of the following is NOT an example of perception in an autonomous car?a)	Detecting drivable spaceb)	Knowing where lanes arec)	Identifying other vehiclesd)	Calculating fuel efficiencyAnswer: d) Calculating fuel efficiency
 3. What is perception mainly concerned with in autonomous systems?a)	Navigationb)	Communicationc)	Sensing the environment and objectsd)	User interactionAnswer: c) Sensing the environment and objects
 4. Perception helps autonomous systems understand...a)	User preferencesb)	Surrounding objects and their positionsc)	Weather conditionsd)	Voice commandsAnswer: b) Surrounding objects and their positions
@@ -140,7 +152,8 @@
     d)	Depth image
     Answer: c) Binary image
 44. What is the purpose of the cost function in a machine learning model?
-    a)	To measure how well the model fits the data
+
+    	To measure how well the model fits the data
     b)	To calculate the total processing power needed
     c)	To determine the accuracy of object detection
     d)	To train the model for image preprocessing
