@@ -77,7 +77,7 @@ A rotary encoder is attached to a rotating shaft, and it detects the angle or sp
 
 wavelength is mainly located in the near-infrared part of the electromagnetic spectrum (750 nm to 1.5µm)
 
-![1727975326003](images/1727975326003.png)
+![1727975326003](images/4.png)
 
 LIDAR—which is short for Light Detection and Ranging—uses a laser that is emitted and then received back in the sensor. In most of the LIDAR sensors used for mapping (and self driving vehicles) the time between the emission and reception is computed to determine the time of flight (ToF). Knowing the speed of light and (1/2 of the) time for the wave to return (since the signal traveled out and back) we can compute how far away the object was that caused the light to bounce back. That value is the range information that is reported by the sensor. LIDAR’s generally use light in the near-infrared, visible (but not really visible), and UV spectrum’s.
 
@@ -85,31 +85,31 @@ There are some sensors that use triangulation to compute the position (instead o
 
 The laser beam can also be focused to have a small spot size that does not expand much. This small spot size can help give a high resolution. If you have a spinning mirror (which is often the case) then you can shoot the laser every degree or so (based on the accuracy of the pointing mechanism) for improved resolution. It is not uncommon to find LIDAR’s operating at 0.25 degrees of angular resolution.
 
-![1727975700255](images/1727975700255.png)
+![1727975700255](images/5.gif)
 
-![1727985077085](images/1727985077085.png)
+![1727985077085](images/6.gif)
 
-![1727975891224](images/1727975891224.png)
+![1727975891224](images/7.gif)
 
 ### RADAR:
 
 RADAR—which is short for Radio Detection and Ranging—uses radio waves to compute velocity, and/or range to an object. Radio waves have less absorption (so less attenuation) than the light waves when contacting objects, so they can work over a longer distance. As you can see in the image below the RF waves have a larger wavelength than the LIDAR waves. The down side is that if an object is much smaller than the RF wave being used, the object might not reflect back enough energy to be detected. For that reason many RADAR’s in use for obstacle detection will be “high frequency” so that the wavelength is shorter (hence why we often use mm-wave in robotics) and can detect smaller objects. However, since LIDAR’s have the significantly smaller wavelength, they will still usually have a finer resolution.
 
-![1727976411125](images/1727976411125.png)
+![1727976411125](images/8.webp)
 
-![1727976544205](images/1727976544205.png)
+![1727976544205](images/9.gif)
 
-![1727976647760](images/1727976647760.png)
+![1727976647760](images/10.webp)
 
 ### IMU:
 
 An inertial measurement unit is a combination of sensors that are used to measure the orientation and motion of the robot with respect to the inertial reference frame
 
-![1727977290379](images/1727977290379.png)
+![1727977290379](images/11.webp)
 
-![1727977365188](images/1727977365188.png)
+![1727977365188](images/12.gif)
 
-![1727977430412](images/1727977430412.png)
+![1727977430412](images/13.gif)
 
 gyroscope:It is used to measure the orientation angles and also angel rotation rate like how fast the robot rotates (rad or deg/s)
 
@@ -147,12 +147,12 @@ GPS & GNSS
 
 **Cameras** – Range up to 30 meters, commonly used in visual SLAM for detecting features in the environment.
 
-![1727978076777](images/1727978076777.png)
+![1727978076777](images/14.webp)
 
 
 **Ultrasonic Sensors** – Range between 2 to 5 meters, mainly used for detecting nearby objects(parking).
 
-![1727978827907](images/1727978827907.png)
+![1727978827907](images/15.gif)
 
 
 **LiDAR** – Range up to 200 meters, providing precise 3D mapping of surroundings by emitting laser pulses.
@@ -165,7 +165,7 @@ GPS & GNSS
 
 ### Sensor of fusion:
 
-![1727978362693](images/1727978362693.png)
+![1727978362693](images/16.gif)
 
 **Select Sensors:**
 
@@ -217,7 +217,7 @@ GPS & GNSS
 
     ***P(X0:T, M∣Z1:T, U1:T)***
 
-![1727981576413](images/1727981576413.png)
+![1727981576413](images/17.jpg)
 
 Given: Z, U
 
@@ -241,15 +241,15 @@ U:
 
 * This refers to the set of control inputs (movements or commands) applied. These inputs influence the robot's trajectory and how it updates its position.
 
-![1727981416666](images/1727981416666.png)
+![1727981416666](images/18.png)
 
-![1727981768661](images/1727981768661.png)
+![1727981768661](images/19.jpg)
 
-![1727981613993](images/1727981613993.png)
+![1727981613993](images/20.jpg)
 
-![1727984517304](images/1727984517304.png)
+![1727984517304](images/21.jpg)
 
-![1727984524474](images/1727984524474.png)
+![1727984524474](images/22.png)
 
 ### what is the point of equation of slam?
 
@@ -288,13 +288,13 @@ In essence, the equations of SLAM are central to enabling robots to map their en
 * **Visual Recognition** : Matches visual features against a known map.
 * **Example** : A robot entering a new room uses visual landmarks to identify its location.
 
-![1727996518722](images/1727996518722.png)
+![1727996518722](images/23.gif)
 
-![1727996801011](images/1727996801011.png)
+![1727996801011](images/24.gif)
 
-![1727997314939](images/1727997314939.png)
+![1727997314939](images/25.gif)
 
-![1727998401634](images/1727998401634.png)
+![1727998401634](images/26.gif)
 
 **2. Relative Localization**
 
@@ -386,11 +386,11 @@ In essence, the equations of SLAM are central to enabling robots to map their en
 * **Markov Localization** : Combines sensor data with a probabilistic model.
 * **Example** : A robot creates a grid map marking walls and obstacles as it explores.
 
-![1727998863010](images/1727998863010.png)
+![1727998863010](images/27.png)
 
-![1727998889100](images/1727998889100.png)
+![1727998889100](images/28.png)
 
-![1727999055710](images/1727999055710.png)
+![1727999055710](images/29.gif)
 
 **2. Feature-Based Mapping**
 
@@ -469,19 +469,19 @@ refer to the errors that build up over time as a robot or system moves through a
 * **Data Association Errors:** Mistakes in matching observed features to the correct landmarks can lead to incorrect updates in the map and localization.
 * **Non-linearities:** As the robot navigates, non-linear movements and turns can introduce additional complexity, increasing the likelihood of cumulative errors.
 
-![1727985979692](images/1727985979692.png)
+![1727985979692](images/30.jpeg)
 
 ### The same or different landmark!
 
-![1727985928989](images/1727985928989.png)
+![1727985928989](images/31.jpg)
 
-![1727985972609](images/1727985972609.png)
+![1727985972609](images/32.jpeg)
 
 ### SLAM paradox:
 
-![1727986108426](images/1727986108426.png)
+![1727986108426](images/33.jpeg)
 
-![1727986114425](images/1727986114425.png)
+![1727986114425](images/34.jpeg)
 
 ### Loop closure:
 
@@ -503,9 +503,9 @@ Correction:
 
 * Once a loop is detected, the system adjusts the robot's position and the map to correct the drift, minimizing errors and improving accuracy.
 
-![1727986580088](images/1727986580088.png)
+![1727986580088](images/35.gif)
 
-![1727986558627](images/1727986558627.png)
+![1727986558627](images/36.gif)
 
 # SLAM approaches:
 
@@ -570,63 +570,63 @@ Each SLAM approach has its strengths and weaknesses, making them suitable for di
 * Function: SLAM enables vehicles to navigate and understand their environment in real-time, allowing them to avoid obstacles and follow paths safely.
 * Importance: Accurate localization and mapping are crucial for ensuring safety and efficiency in driving, especially in dynamic environments like city streets.
 
-![1728001455568](images/1728001455568.png)
+![1728001455568](images/37.webp)
 
 2. Drones
 
 * Function: Drones use SLAM to navigate and create maps of areas, particularly in environments where GPS signals are weak or unavailable.
 * Importance: SLAM allows drones to perform tasks like surveying, agriculture monitoring, and search-and-rescue missions autonomously and reliably.
 
-![1727992417646](images/1727992417646.png)
+![1727992417646](images/38.gif)
 
 3. Smart Farming
 
 * Function: Agricultural robots use SLAM to navigate fields, monitor crop health, and perform precision agriculture tasks.
 * Importance: This technology increases productivity and reduces resource usage by enabling targeted interventions based on accurate mapping.
 
-![1727992587240](images/1727992587240.png)
+![1727992587240](images/39.jpg)
 
 4. Underwater Exploration
 
 * Function: Submersible robots use SLAM to navigate and map underwater environments, which are often challenging due to limited visibility and GPS unavailability.
 * Importance: SLAM allows for safe exploration of ocean depths, aiding in research, resource management, and environmental monitoring.
 
-![1727992773657](images/1727992773657.png)
+![1727992773657](images/40.gif)
 
 5. Healthcare Robotics
 
 * Function: Surgical robots and automated medical devices use SLAM to navigate operating rooms and deliver supplies accurately.
 * Importance: Accurate localization in dynamic environments enhances the safety and efficiency of medical procedures, improving patient outcomes.
 
-![1727992751559](images/1727992751559.png)
+![1727992751559](images/41.gif)
 
 6. Retail and Inventory Management
 
 * Function: Autonomous robots in stores use SLAM to navigate aisles, monitor inventory levels, and assist customers.
 * Importance: This application improves operational efficiency, reduces labor costs, and enhances customer service by ensuring products are readily available.
 
-![1727993448886](images/1727993448886.png)
+![1727993448886](images/42.gif)
 
  7.Mining and Exploration
 
 * Function: Autonomous robots utilize SLAM to navigate and map underground mines, gathering data and ensuring safe exploration.
 * Importance: SLAM enhances safety by enabling remote operation in hazardous conditions, helping to reduce human risk.
 
-![1727993316016](images/1727993316016.png)
+![1727993316016](images/43.gif)
 
  8.Firefighting and Emergency Response
 
 * Function: SLAM-equipped robots can navigate through smoke-filled or hazardous environments to locate victims and assess dangers.
 * Importance: This capability enhances situational awareness and safety for responders, improving effectiveness in emergencies.
 
-![1727992926866](images/1727992926866.png)
+![1727992926866](images/44.gif)
 
  9.Delivery Robots
 
 * Function: Autonomous delivery robots utilize SLAM to navigate urban areas or campuses, delivering packages to designated locations.
 * Importance: SLAM enables efficient and safe navigation, contributing to the growth of last-mile delivery solutions.
 
-![1727992858724](images/1727992858724.png)
+![1727992858724](images/45.gif)
 
 # Resources:
 
