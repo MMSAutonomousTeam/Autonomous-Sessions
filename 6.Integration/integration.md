@@ -387,7 +387,7 @@ A navigation request is an example of this type of communication. This request i
 
 image
 
-code example 
+code example
 
 ### this how the nodes could talk to each other but how the node actually works ?
 
@@ -409,7 +409,7 @@ For example, a node that, for each image it receives, performs detection on it a
 The frequency at which an output occurs depends on the frequency at which images arrive.
 If no images reach it, it produces no output.
 
-code example and image 
+code example and image
 
 ### layed archetecture
 
@@ -439,7 +439,114 @@ ROS 2 applications access ROS 2 features through the ROS Client Library (RCL) cl
 
 ## embedded boards used in robotics
 
+microcontroller-based vs microporsseror-based vs SoC
 
+| Feature                                 | Microcontroller-Based Boards                                    | Microprocessor-Based Boards                          | System on Chip (SoC)                                                 |
+| --------------------------------------- | --------------------------------------------------------------- | ---------------------------------------------------- | -------------------------------------------------------------------- |
+| **Processing Power**              | Low to moderate (8-32 MHz)                                      | Moderate to high (1-4 GHz)                           | High (up to 2 GHz and above)                                         |
+| **Memory**                        | Limited (2-256 KB RAM)                                          | Moderate to high (1-8 GB RAM)                        | Integrated memory (1-8 GB RAM)                                       |
+| **Operating System**              | No OS (bare-metal programming)                                  | Typically runs a full OS (Linux)                     | Can run a full OS or RTOS                                            |
+| **Cost**                          | Generally low ($5-$30)                                          | Moderate to high ($30-$200)                          | Varies, generally moderate to high ($50-$200)                        |
+| **Examples**                      | Arduino Uno (e.g., simple robot)                                | Raspberry Pi 4 (e.g., robotic arm)                   | NVIDIA Jetson Nano (e.g., autonomous drone)                          |
+| **Supporting ROS**                | Limited support, basic functionalities                          | Good support, full ROS capabilities                  | Excellent support, optimized for ROS applications                    |
+| **Typical Use Cases in Robotics** | Simple robots, sensor interfacing (e.g., line-following robots) | Complex robots, computer vision (e.g., robotic arms) | Autonomous robots, drones, AI applications (e.g., self-driving cars) |
+
+### some importatn concepts
+
+### Input Peripherals
+
+Input peripherals are essential for robots as they allow them to sense and gather information from their environment. These devices provide the necessary data that helps robots make informed decisions and react accordingly. Common input peripherals in robotics include:
+
+- **Sensors**: Devices that detect physical properties. Examples include:
+  - **Ultrasonic Sensors**: Measure distance to obstacles by emitting sound waves and calculating the time it takes for the echoes to return.
+  - **Infrared Sensors**: Use light waves to detect obstacles or measure temperature, commonly used in line-following robots.
+
+### Output Peripherals
+
+Output peripherals enable robots to take actions based on the information processed by the CPU. They help robots interact with their environment. Key output peripherals include:
+
+- **Motors**: Convert electrical signals into motion. Examples include:
+
+  - **Servo Motors**: Allow precise control of angular position, making them ideal for robotic arms and grippers.
+  - **DC Motors**: Provide continuous rotation, commonly used for driving wheels in mobile robots.
+- **Lights and Buzzers**: Used for signaling and feedback. Examples include:
+
+  - **LEDs**: Indicate the operational status of the robot (e.g., powered on or in standby mode).
+  - **Buzzers**: Emit sound alerts to notify users or indicate specific events.
+
+### CPU (Central Processing Unit)
+
+The CPU is the brain of the robot, responsible for processing data and executing commands. Key functions include:
+
+- **Processing Power**: Determines how quickly the robot analyzes data and responds to changes, enabling complex calculations and multitasking.
+- **Decision Making**: Interprets sensor data to control output peripherals, allowing the robot to navigate and perform tasks.
+- **Task Management**: Handles multiple tasks simultaneously, essential for efficient operation.
+- **Real-Time Processing**: Enables the robot to make quick decisions, critical for applications like autonomous driving.
+- **Memory Usage**: Utilizes RAM for immediate tasks and storage for long-term data, allowing the CPU to manage complex programs effectively.
+
+### Other Peripherals
+
+Other peripherals enhance the robot's functionality and enable additional capabilities. These include:
+
+- **Communication Modules**: Allow the robot to communicate with other devices or systems. Examples include:
+
+  - **Wi-Fi Modules**: Enable internet connectivity for remote control or data sharing.
+  - **Bluetooth Modules**: Facilitate short-range communication with smartphones or other devices.
+- **Storage**: Components like SD cards or flash memory provide capacity to store data, such as sensor logs, configurations, or program files.
+- **Power Supply**: Essential for powering all robot components, including batteries or external power sources for operational longevity.
+
+difference between micorcontroller based and microprocessor based in robotics from the book :
+
+what matters while choosing such boards (from the book )
+
+lets build our system
+
+    +--------------------+
+          |      Camera        |
+          |  (Device Driver)   |
+          |   - Image Capture  |
+          +--------------------+
+                    |
+                    |
+                    |  USB/CSI or I2C
+                    |
+                    v  Serial (UART) or I2C           Serial (UART) or I2C
++---------------------+        +------------------+     +----------------+
+| LIDAR                 | ---> |  Raspberry Pi    | <---|GPS              |
+|                           |           |                       |         | (device driver )|
+|                          |            |                       |        |  - Geolocation  |
+| - Distance Measurement|  |   (ROS2 Nodes)     +-----------------+
+| (Device Drivers)      |      |                         |
++-----------------------+         |  - Sensor Fusion  |
+                                         |- SLAM           |
+                                         |- Path Planning   |
+                                         |- Object Detection |
+                                          |- Control Logic   |
+                                          +------------------+
+
+    |
+                                                    |  Serial (UART)
+                                                    v
+                                             +-----------+
+                                             |   Arduino |
+                                             |   (Motor  |
+                                             |   Control)
+                                               - PWM Signals  |
+                                          |   - Motor Feedback |
+                                           +-----------+
+                                                  |
+                                                  |  PWM (for Motor Driver)
+                                                 v
+		                        +--------------------+
+                		       |    Motor Driver    |
+                      			 |  (Device Driver)   |
+                      			 +--------------------+
+                               			  |
+                                		 v
+                               		     +-----+
+                              		     | DC  |
+                               		    |Motors|
+                                	     +-----+
 
 ## hardware - software integration
 
