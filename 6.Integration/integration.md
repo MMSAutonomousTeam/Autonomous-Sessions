@@ -25,7 +25,6 @@ While this guide is designed for students, professionals, and robotics enthusias
 * **System Components**
 * **Software Integration**
 * **Hardware - Software Integration**
-* **Hands-On Activity**
 
 ---
 
