@@ -1,8 +1,25 @@
-By: Zaynap Ahmad
-
 # Integration Session
 
-## Our Outlines:
+As we embark on this integration session of our autonomous systems workshop, we'll focus on the exciting journey of transforming theoretical concepts into practical applications. This session will guide you through the process of assembling a fully autonomous robot, building on the pieces we've previously discussed.
+
+While this guide is designed for students, professionals, and robotics enthusiasts alike, having prior knowledge of autonomous system concepts will enhance your experience. Our goal is to inspire creativity and curiosity, equipping you with the tools to navigate the dynamic world of autonomous robotics.
+
+> It will be beneficial to have a solid understanding of these concepts as we delve deeper into implementation!
+
+---
+
+### About the instructor
+
+👋 Hi! I'm **[Zaynap Ahmad](https://github.com/zaynabahmad)**
+
+* 🎓 Mechatronics Level 300
+* 🧠  autonomous member (Motion Planning) 23-24
+* 🤖 Technical director 24-25
+* 🔗Contact me: [LinkedIn](https://www.linkedin.com/in/zaynap-ahmad-a833b324a/)
+
+---
+
+### Today's Content
 
 * **robotic system archetecture**
 * **System Components**
@@ -10,35 +27,38 @@ By: Zaynap Ahmad
 * **Hardware - Software Integration**
 * **Hands-On Activity**
 
+---
+
 ## teleoperational vs autonomous robots
 
 <div align="center">
   <img src="images/High-level-architecture-of-a-UAV-system.png" alt="System Components Diagram" style="width: 100%; max-width: 1000px;">
 </div>
 
-Teleoperational Robots are controlled directly by a human. The operator uses a remote control or a computer to send commands. This type of robot is often used in situations where it might be dangerous for a person to be present, like in bomb disposal or remote surgery. The operator must stay focused and react quickly, as they are responsible for every action the robot takes. However, teleoperational robots can be slower and have limitations in their speed and range due to the reliance on human control and the need for a stable communication link.
+**Teleoperational Robots** are directly controlled by a human operator who uses a remote control or computer to send commands. This type of robot is often deployed in high-risk environments, such as bomb disposal or remote surgeries. The operator must maintain focus and react swiftly, as they are responsible for every action the robot takes. However, teleoperational robots can be slower and have limitations in speed and range due to their reliance on human control and the necessity for a stable communication link.
 
 <div align="center">
   <img src="images/The-software-architecture-of-our-UAV-inspection-system.png" alt="System Components Diagram" style="width: 100%; max-width: 1000px;">
 </div>
 
-On the other hand,autonomous robtos  can operate on their own without human control. They use sensors to understand their environment and make decisions based on what they see. These robots can adapt to changes around them and do not need someone to guide them constantly. They are often used in applications like self-driving cars or robotic vacuum cleaners.
-in this system i need the system it self to determine its action
+In contrast, **Autonomous Robots** can operate independently without human intervention. They leverage sensors to perceive their environment and make real-time decisions based on their observations. These robots can adapt to changes in their surroundings, making them ideal for applications like self-driving cars and robotic vacuum cleaners. In this system, **the robot itself determines its actions based on the information it gathers.**
 
 ### Key Differences
 
 1. **Control**:
 
-   - **Teleoperational Robots**: A human operates these robots by sending commands. The operator must pay close attention and be skilled. Because the robot relies on human input, it can be slower and may not react as quickly to changes.
-   - **Autonomous Robots**: These robots can make decisions on their own and act without human control. They use sensors to understand their environment and can respond quickly to changes around them.
+   - **Teleoperational Robots**: Operated by humans who send commands, requiring close attention and skill. Their reliance on human input can slow reaction times and limit responsiveness to environmental changes.
+   - **Autonomous Robots**: Make decisions independently, using sensors to understand and respond to their surroundings quickly.
 2. **Communication**:
 
-   - **Teleoperational Robots**: They need a strong communication link with the operator. If the connection is lost, the robot might stop working or become hard to control. This limits how far away they can operate.
-   - **Autonomous Robots**: They don’t need to communicate with a human to function. They process information and react to their surroundings independently, which gives them more freedom to move around.
+   - **Teleoperational Robots**: Depend on a strong communication link with the operator; if this connection is lost, the robot may halt or become difficult to control, limiting operational range.
+   - **Autonomous Robots**: Function independently without the need for human communication, processing information and reacting to their environment autonomously, allowing greater freedom of movement.
 3. **Software Complexity**:
 
-   - **Teleoperational Robots**: The software is simpler and focuses on allowing the operator to control the robot easily. It doesn’t have to make complex decisions because a person is in charge.
-   - **Autonomous Robots**: Their software is more complex, using advanced technology to help the robot see, think, and learn from its experiences.
+   - **Teleoperational Robots**: Utilize simpler software focused on enabling effective human control, without the need for complex decision-making processes.
+   - **Autonomous Robots**: Feature advanced software that facilitates perception, decision-making, and learning, enabling them to adapt and improve over time.
+
+***This foundational understanding of teleoperational and autonomous robots will set the stage for our exploration of how to integrate these concepts into real-world applications. Let’s dive in!***
 
 ## our system archetechure
 
@@ -50,35 +70,39 @@ in this system i need the system it self to determine its action
 
 #### 1. Perception
 
-- **Description:** Enables the robot to sense and interpret its environment.
-- **Input:** Raw sensor data (e.g., camera images, LIDAR data)
-- **Output:** Processed environmental data (e.g., detected objects, distance measurements)
+- **Description** : This component enables the robot to sense and interpret its environment, providing critical information for decision-making.
+- **Input** : Raw sensor data (e.g., camera images, LIDAR data)
+- **Output**: Processed environmental data (e.g., detected objects, distance measurements)
 
 #### 2. SLAM (Simultaneous Localization and Mapping)
 
-- **Description:** Builds a map of the environment while tracking the robot's location.
-- **Input:** Sensor data and motion data
-- **Output:** Environment map and robot’s position
+- **Description**: SLAM builds a map of the environment while simultaneously tracking the robot's position within that map, allowing for accurate navigation.
+- **Input**: Sensor data and motion data
+- **Output** : An updated environment map and the robot’s current position
 
 #### 3. Path Planning
 
-- **Description:** Determines the optimal route from the current location to the destination.
-- **Input:** Environment map and goal coordinates
-- **Output:** Planned path (waypoints or trajectory)
+- **Description** : This component determines the optimal route from the robot's current location to its intended destination, considering obstacles and environmental factors.
+- **Input**: Environment map and goal coordinates
+- **Output** : A planned path consisting of waypoints or trajectory
 
 #### 4. Control
 
-- **Description:** Manages the robot's movements and actions based on the planned path and feedback.
-- **Input:** Planned path and sensor feedback
-- **Output:** Actuator commands (e.g., motor speeds, steering angles)
+- **Description** : The Control component manages the robot's movements and actions based on the planned path and real-time feedback from sensors, ensuring smooth operation.
+- **Input** : Planned path and sensor feedback
+- **Output**: Actuator commands (e.g., motor speeds, steering angles)
 
-### this how the whole system work but how the system repspond to the environment by any sequance ?
+---
 
-The relationship between the computational requirements for coming up with an an appropriate response to a given environmental challenge and the time allowed by the circumstances is at the heart of designing robot architectures
+***This how the whole system work but how the system repspond to the environment by any sequance ?***
 
-### sort of archetectures allow for timely response across environment ?
+### System Response to Environmental Challenges
 
-Murphy(2000) describes the range of current architectures (or  *paradigms* ) in terms of the relationships between three primitives,  *sense* , *plan* and *act* and in terms of how sensory data is processed and propagated through the system.
+Understanding how the system responds to environmental challenges is crucial. The balance between the computational requirements needed to formulate an appropriate response and the time constraints posed by the circumstances is at the core of designing effective robot architectures.
+
+### Architectures for Timely Responses
+
+Murphy (2000) discusses various robotic architectures—or paradigms—in her book (introduction to AI robotics ) that illustrate the interplay between three fundamental actions: **sense** , **plan** , and **act** . These paradigms define how sensory data is processed and propagated throughout the system, shaping how robots interact with their environments and respond to challenges.
 
 <div align="center">
   <img src="images/paradigms.gif" alt="paradigms" style="width: 100%; max-width: 1000px;">
@@ -86,11 +110,11 @@ Murphy(2000) describes the range of current architectures (or  *paradigms* ) in 
 
 ### hierarchical appraoch :
 
-he *hierarchical paradigm* is a bit of a caricature. It was however the dominant paradigm in the early days of AI robotics when much of the focus was on robot planning. The emphasis in these early systems was in constructing a detailed world model and then carefully planning out what steps to take next. The problem was that, while the robot was constructing its model and deliberating about what to do next, the world was likely to change. So these robots exhibited the odd behavior that they would look (acquire data, often in the form of one or more camera images), process and plan, and then (often after a considerable delay) they would lurch into action for a couple of steps before beginning the cycle all over again. [Shakey](http://www.frc.ri.cmu.edu/~hpm/book98/fig.ch2/p027.html) a robot developed at the Stanford Research Institute in the 1970s was largely controlled by a remote computer connected to the robot by a radio link; Shakey exhibited this sort of look-and-lurch behavior as it contemplated moving blocks around to achieve a goal
-
 <div align="center">
   <img src="images/horizontal.gif" alt="horizontal" style="width: 100%; max-width: 1000px;">
 </div>
+
+The *hierarchical paradigm* was historically dominant in AI robotics, emphasizing detailed world modeling and sequential planning. While effective in structured environments, this approach often faced challenges. As the robot constructed its model and deliberated on its next steps, the external environment would likely change, resulting in a behavior known as "look-and-lurch." A notable example is  *Shakey* , a robot developed at the Stanford Research Institute in the 1970s, which was controlled by a remote computer and exhibited this behavior while attempting to manipulate blocks.
 
 <div align="center">
   <img src="images/cc64e1e5-shakeysriinternational1-1487364021434.webp" alt="shaky" style="width: 100%; max-width: 1000px;">
@@ -98,22 +122,17 @@ he *hierarchical paradigm* is a bit of a caricature. It was however the dominant
 
 ### Reactive Systems
 
-An alternative to the hierarchical paradigm with its horizontally organized architecture is called the *reactive paradigm* and is labeled as such above. Adherents of the reactive paradigm organize the components vertically so that there is a more direct route from sensors to effectors.
+In contrast, the *reactive paradigm* organizes components vertically, providing a more direct path from sensors to effectors. This approach facilitates quicker responses to environmental stimuli, enhancing the robot’s adaptability.
 
 <div align="center">
   <img src="images/vertical.gif" alt="vertical" style="width: 100%; max-width: 1000px;">
 </div>
 
-Note that in this vertical decomposition there is the potential for contention over the effectors. Just as in the example of steering a car to exit from the highway while avoiding an accident with the car in the lane to your right, there is contention among the various components, avoiding, exploring, wandering, planning, for taking control of the robots actuators. Brooks suggests that we solve the problem of contention by allowing components at one level to *subsume* components at a lower level. Thus he called his approach the  ***subsumption architecture*** .
+However, this vertical organization introduces potential contention over the effectors. For instance, when steering a car, multiple components—like avoiding an obstacle or exploring—may compete for control over the robot's actuators. To address this, Brooks introduced the **subsumption architecture**, which allows higher-level components to subsume lower-level ones.
 
-In the subsumption architecture, components behaviors are divided into layers with an arbitration scheme whereby behaviors at one level can manipulate what behaviors at a lower level can see or do. Brooks called the most primitive components of his architecture  *modules* . Each module has inputs, outputs and a reset. A module at a higher level can suppress the input of a module at a lower level thereby preventing the module from seeing a value at its input. A module can also inhibit the output of a module at a lower level thereby preventing that output from being propagated to other modules.
+In this architecture, behaviors are organized into layers with an arbitration scheme, enabling higher-level modules to inhibit the inputs and outputs of lower-level modules. The most basic components, termed modules, possess inputs, outputs, and reset capabilities, facilitating smooth transitions between states based on sensor input and internal conditions.
 
-The modules are meant to be simple computationally and so it is reasonable to think of them as circuits or finite state-machines. Brooks assumed that they were augmented finite state controllers. The reset would cause the controller to return to its initial state. Once set in motion the controllers would continuously transition from one state to the next. The transitions can be determined in part by reading from the inputs and some internal state and of course by referring to the present state of the controller. Brooks also allows controllers to have an internal clock or timer and so, for example, they can execute a wait. Here are the basic transition types allowed in specifying the transition function of a finite-state controller.
-
-* **Output** - a transition can compute a value as a function of the module's inputs and internal state and then send the value to one of its outputs before entering a specified state
-* **Side effect** - a transition can set one of the module's instance variables (internal state) to some value computed as a function of the module's inputs and internal state; the module then enters a specified state
-* **Conditional dispatch** - a predicate on the module's inputs and instance variables is evaluated and depending on the outcome the module enters one of two specified states
-* **Event dispatch** - a sequence of conditions and states to branch to is specified; the conditions are then monitored continuously until a condition is met and then the module transitions to the corresponding state
+These modules can be thought of as simple computational units, akin to circuits or finite state machines, that continuously transition between states based on environmental feedback.
 
 <div align="center">
   <img src="images/avoid.gif" alt="vertical" style="width: 100%; max-width: 1000px;">
@@ -121,13 +140,17 @@ The modules are meant to be simple computationally and so it is reasonable to th
 
 ### hybrid archetecute :
 
-think and act independantly and concerntly , its a combination of reactive and delibrative
+A more recent development in robotic design is the hybrid architecture, which seeks to integrate the strengths of both reactive and deliberative paradigms. This three-layered system comprises a reactive layer, a deliberative layer, and a middle layer that coordinates between the two.
 
-its called the three layerd system (reactive layer , delibretive layer , middle layer )
+In this architecture, the reactive layer allows for quick responses to immediate stimuli, while the deliberative layer enables longer-term planning and strategy development. The middle layer acts as a mediator, ensuring that the system can think and act independently and concurrently, striking a balance between rapid reaction and thoughtful decision-making.
 
 <div align="center">
   <img src="images/hybrid.png" alt="vertical" style="width: 100%; max-width: 1000px;">
 </div>
+
+***By understanding these architectural paradigms, we can better design systems that effectively respond to dynamic environments, enhancing the capabilities and reliability of autonomous robots.***
+
+---
 
 ### The Importance of Integration
 
@@ -135,69 +158,31 @@ We've explored the different architectures for robot control, from the slow and 
 
 As Rodney Brooks famously said, **"Robotics is the art of integration."**   A robot is not simply a collection of parts – it's a complex system where hardware, software, sensors, and actuators all work together seamlessly. The success of a robot hinges on how well these elements are integrated.
 
-Integration is crucial for several reasons:
+#### Integration is crucial for several reasons:
 
-* **Efficiency**: A well-integrated system allows for smooth information flow between components, leading to faster response times and efficient operation.
-* **Performance**: When everything works together in harmony, the robot can perform its tasks more accurately and reliably.
-* **Flexibility:** Modular and well-integrated systems can be easily adapted to new tasks or environments by adding or replacing components.
-* **Scalability**: Integration allows for building complex robots with many functionalities by seamlessly integrating additional components
+- **Efficiency**: A well-integrated system ensures smooth information flow between components, leading to faster response times and more efficient operations. This seamless communication allows the robot to act quickly and accurately in dynamic environments.
+- **Performance**: When all components work in harmony, the robot can perform its tasks with greater precision and reliability. Effective integration minimizes errors and enhances the overall functionality of the system.
+- **Flexibility:**: Modular and well-integrated systems can be easily adapted to new tasks or environments. By adding or replacing components, robots can evolve to meet changing requirements, making them versatile in a variety of applications.
+- **Scalability**: Integration facilitates the development of complex robots with diverse functionalities. By seamlessly incorporating additional components, we can enhance the robot's capabilities without compromising its performance.
 
-<!-- <style>
-    .mermaid {
-        max-width: 200%;
-        width: 200%; /* Make the diagram take full width */
-        height: auto; /* Adjust height automatically */
-    }
-    /* Optional: Increase the font size if needed */
-    .mermaid .node rect {
-        width: 200px; /* Increase node width */
-        height: auto; /* Adjust node height automatically */
-    }
-    .mermaid .node text {
-        font-size: 16px; /* Increase font size for better readability */
-    }
-</style> -->
+<div align="center">
+  <img src="images/SYS_INTEG.jpeg" alt="vertical" style="width: 100%; max-width: 1000px;">
+</div>
 
-```mermaid
-graph TD;
-    A[system Integration ] 
-    A --> B[Performance]
-    A --> C[Flexibility]
-    A --> D[Dependability]
-  
-    B --> E[System Integration]
-    E --> F[Smooth Interaction]
-    F --> G[Efficient Memory]
+---
 
-    C --> H[Easy Updates]
-    H --> I[New Features]
-    I --> J[System Growth]
+### two main steps in integration :
 
-    D --> K[Steady Results]
-    K --> L[Reliable Operation]
-    L --> M[Few Errors]
+To achieve effective integration in robotic systems, we focus on two main steps:
 
- 
-    classDef centralNode fill:#e0e0e0,stroke:#333,stroke-width:1px,font-size:14px,color:#000;
-    classDef branchNode fill:#cce5ff,stroke:#333,stroke-width:1px,font-size:13px,color:#000;
-    classDef detailNode fill:#fff,stroke:#333,stroke-width:1px,font-size:12px,color:#000;
-
-    class A centralNode;
-    class B,C,D branchNode;
-    class E,H,K detailNode;
-    class F,G,I,J,L,M detailNode;
-```
-
-#### two main steps in integration :
-
-* software integration
-* hardware - software integration
+* **software integration:** This step involves ensuring that various software components work together seamlessly. It encompasses integrating algorithms for perception, planning, and control, as well as establishing communication protocols between different software modules. Effective software integration allows for real-time data processing and decision-making, enabling the robot to respond appropriately to environmental changes.
+* **hardware - software integration:** This step focuses on the alignment between hardware components (sensors, actuators, and processors) and the software that drives them. It involves configuring the hardware to accurately interpret sensor data and translate software commands into physical actions. Successful hardware-software integration ensures that the robot operates efficiently and reliably, with minimal latency between sensing, processing, and acting.
 
 ## software integration
 
 > **to integrate the software components there are many archetectures to use**
 
-**Software architecture** is the high-level structure of a software system, defining how components are organized and interact with each other. In the context of robotics, the software architecture plays a crucial role in determining how different software modules are integrated to control the robot's behavior.
+**Software architecture** refers to the high-level structure of a software system, defining how components are organized and how they interact with each other. In the context of robotics, the software architecture is crucial for determining how different software modules are integrated to control the robot's behavior effectively.
 
 image for (software arch)
 
@@ -205,49 +190,38 @@ image for (software arch)
 
 ### Object-Oriented Robotics (OO-R)
 
-**Object-Oriented Robotics (OO-R)** is a design paradigm that applies object-oriented programming (OOP) principles to the development of robotic systems. The focus of OO-R is on creating modular, reusable, and maintainable components that can interact with each other effectively. This approach offers several advantages in the design and implementation of robotic systems.
+**Object-Oriented Robotics (OO-R)** applies object-oriented programming (OOP) principles to the development of robotic systems. This design paradigm emphasizes creating modular, reusable, and maintainable components that can effectively interact with one another. OO-R offers several advantages, including improved code organization and the ability to easily extend functionalities.s
 
 [example of software archetecture with OO-R](codes/OO-R_psudeoCode.py)
 
-```mermaid
-flowchart LR
-    subgraph Robot Controller
-        A(Robot Controller)
-    end    subgraph Sensors
-        B(Camera) --> A
-        C(LiDAR) --> A
-    end    subgraph Actuators
-        D(Motor) --> A
-        E(Servo) --> A
-    end    subgraph Perception
-        F(Perception Module) --> A
-    end    subgraph Planning
-        G(Planning Module) --> A
-    end    subgraph Execution
-        H(Execution Module) --> A
-    end
-style A fill:#f0f0f0, stroke:#ccc, stroke-width:2px, font-size:12px, text-align:center
-style B, C, D, E, F, G, H fill:#e0e0e0, stroke:#ccc, stroke-width:1px, font-size:12px, text-align:center
-
-```
+<div align="center">
+  <img src="images/OO-R.jpeg" alt="vertical" style="width: 100%; max-width: 1000px;">
+</div>
 
 ### Component-Based Robotics (CB-R)
 
-**Component-Based Robotics (CB-R)** is an architectural approach that focuses on building robotic systems using interchangeable and reusable components. This methodology emphasizes modular design, where each component encapsulates specific functionality and can communicate with other components through well-defined interfaces. CB-R enhances flexibility, scalability, and maintainability in robotics development.
+**Component-Based Robotics (CB-R)** focuses on constructing robotic systems using interchangeable and reusable components. This methodology emphasizes modular design, where each component encapsulates specific functionality and communicates with other components through well-defined interfaces. CB-R enhances flexibility, scalability, and maintainability in robotics development.
 
 [example of software archetecture with CB-R](codes/CB-R_psudeoCode.py)
 
-chart
+<div align="center">
+  <img src="images/CB-R.jpeg" alt="vertical" style="width: 100%; max-width: 1000px;">
+</div>
 
 ### Service-Driven Robotics (SD-R)
 
-**Service-Driven Robotics (SD-R)** is an architectural paradigm that focuses on building robotic systems as collections of services that can be independently developed, deployed, and consumed. This approach emphasizes the use of services as discrete units of functionality, promoting interoperability and scalability in robotic applications.
+**Service-Driven Robotics (SD-R)** is an architectural paradigm that focuses on building robotic systems as collections of services that can be independently developed, deployed, and consumed. This approach emphasizes using services as discrete units of functionality, promoting interoperability and scalability in robotic applications.
 
 [example of software archetecture with SB-R](codes/SB-R_psudeoCode.py)
 
-chart
+<div align="center">
+  <img src="images/SD-R.jpeg" alt="vertical" style="width: 100%; max-width: 1000px;">
+</div>
 
-after understanding what are the archetectures we could use to build the software , there are frameworks helps us to do this
+after understanding what are thAfter understanding the various architectures available for building software, we can leverage frameworks that facilitate this process. These frameworks provide pre-defined structures and tools that streamline development, ensuring that our software components can be integrated efficiently and effectively.e archetectures we could use to build the software , there are frameworks helps us to do
+this
+
+---
 
 ### Frameworks
 
@@ -255,9 +229,7 @@ after understanding what are the archetectures we could use to build the softwar
   <img src="images/software framework .png" alt="System Components Diagram" style="width: 100%; max-width: 1000px;">
 </div>
 
-**Frameworks** are reusable software platforms that provide a foundation for building applications. They offer pre-built components, tools, and guidelines to streamline the development process and enhance code quality. In the field of robotics, frameworks play a crucial role in simplifying the development of complex software systems.
-
-write that there are frameworks for application , middleware and so on
+**Frameworks** are reusable software platforms that provide a foundation for building applications. They offer pre-built components, tools, and guidelines to streamline the development process and enhance code quality. In the field of robotics, frameworks are essential for simplifying the development of complex software systems and can include frameworks for applications, middleware, simulation, and more.
 
 **Key benefits of using frameworks in robotics:**
 
@@ -268,20 +240,23 @@ write that there are frameworks for application , middleware and so on
 
 ### frameworks used in robotics :
 
-| Framework                 | Overview                                                 | Key Features                                             | Architecture Type                | Use Cases                                   |
-| ------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------- | ------------------------------------------- |
-| **ROS**             | Open-source robot software framework                     | Modular design, extensive libraries, strong community    | Component-based                  | Research, prototyping, complex systems      |
-| **ROS 2**           | Enhanced successor to ROS for real-time applications     | Improved communication, security, multi-platform support | Component-based, Service-based   | Industrial applications, autonomous systems |
-| **OpenRTM-aist**    | Framework for robot system integration                   | Real-time operations, easy component integration         | Component-based                  | Academic research, complex systems          |
-| **Webots**          | Robot simulation software                                | User-friendly, extensive API                             | OOP (Object-oriented)            | Education, testing, prototyping             |
-| **Choreonoid**      | Flexible robotics simulation framework                   | Component-based, supports motion planning                | Component-based                  | Research, prototyping, testing              |
-| **CoppeliaSim**     | Versatile robot simulation environment                   | Integrated simulation, Lua scripting                     | OOP, Scripting                   | Algorithm development, testing              |
-| **OpenAI Gym**      | Toolkit for reinforcement learning algorithms            | Environment integration                                  | Modular, API-driven              | Reinforcement learning applications         |
-| **MATLAB/Simulink** | High-level control system programming                    | Block diagram environment, extensive toolboxes           | Block-based (Visual programming) | Prototyping, simulations                    |
-| **ROS for Windows** | ROS version adapted for Windows                          | Windows compatibility, easier integration                | Component-based                  | Windows-based robotic software              |
-| **RoboDK**          | Simulation and offline programming for industrial robots | Easy integration with multiple languages                 | OOP, API-driven                  | Industrial robot programming, simulation    |
+| Framework                 | Overview                                                        | Key Features                                             | Architecture Type                | Use Cases                                     |
+| ------------------------- | --------------------------------------------------------------- | -------------------------------------------------------- | -------------------------------- | --------------------------------------------- |
+| **ROS**             | Open-source robot software framework                            | Modular design, extensive libraries, strong community    | Component-based                  | Research, prototyping, complex systems        |
+| **ROS 2**           | Enhanced successor to ROS for real-time applications            | Improved communication, security, multi-platform support | Component-based, Service-based   | Industrial applications, autonomous systems   |
+| **OpenRTM-aist**    | Framework for robot system integration                          | Real-time operations, easy component integration         | Component-based                  | Academic research, complex systems            |
+| **Webots**          | Robot simulation software                                       | User-friendly, extensive API                             | OOP (Object-oriented)            | Education, testing, prototyping               |
+| **Choreonoid**      | Flexible robotics simulation framework                          | Component-based, supports motion planning                | Component-based                  | Research, prototyping, testing                |
+| **CoppeliaSim**     | Versatile robot simulation environment                          | Integrated simulation, Lua scripting                     | OOP, Scripting                   | Algorithm development, testing                |
+| **OpenAI Gym**      | Toolkit for reinforcement learning algorithms                   | Environment integration                                  | Modular, API-driven              | Reinforcement learning applications           |
+| **MATLAB/Simulink** | High-level control system programming                           | Block diagram environment, extensive toolboxes           | Block-based (Visual programming) | Prototyping, simulations                      |
+| **ROS for Windows** | ROS version adapted for Windows                                 | Windows compatibility, easier integration                | Component-based                  | Windows-based robotic software                |
+| **RoboDK**          | Simulation and offline programming for industrial robots        | Easy integration with multiple languages                 | OOP, API-driven                  | Industrial robot programming, simulation      |
+| **YARP**            | Yet Another Robot Platform for communication between components | Real-time inter-process communication                    | Middleware                       | Robotics applications with complex components |
+| **Carmen**          | Framework for robot control and simulation                      | Support for various sensor types, easy integration       | Component-based                  | Research, mobile robot applications           |
+| **Player/Stage**    | Robot device interface and simulation environment               | Allows control of physical robots and simulated robots   | Client-server architecture       | Multi-robot systems, research, education      |
 
-add these : Yarp[5], Carmen[6], Player/Stage[
+***These frameworks provide valuable tools and structures that facilitate the development and integration of robotic systems, ensuring that developers can focus on creating innovative solutions while benefiting from established best practices.***
 
 ## ROS2
 
@@ -289,22 +264,20 @@ finished the software lets put our software into work
 
 ### what is ROS ?
 
-The meaning of the acronym ROS is Robot Operating System. It is not an operating system that replaces Linux or Windows but a middleware1 that increases the system’s capabilities to develop Robotic applications.
+The acronym ROS stands for Robot Operating System. It is important to clarify that ROS is not a traditional operating system that replaces Linux or Windows; rather, it serves as middleware that enhances the capabilities of robotic applications. The "2" in ROS 2 indicates that it is the second generation of this middleware.
 
-The number 2 indicates that it is the second generation of this middleware
+Robot Operating System (ROS) consists of a suite of open-source algorithms, hardware drivers, and tools designed to facilitate the development of robot control software. Despite its name, it is fundamentally:
 
-Robot Operating System (ROS) is a set of open source algorithms, hardware driver software and tools developed to develop robot control software. Even though it has operating system in its name it is not an operating system[4]. It is
+* **A Communication System**  (including Publish-Subscribe and Remote Method Invocation)
+* A set of **Frameworks & Tools** (for building systems, managing dependencies, visualization, recording, and replaying data)
+* **An Ecosystem**  that includes language bindings, drivers, libraries, and simulation tools (like Gazebo)
 
-* Communication System (Publish Subscribe and Remote Method Invocation),
-* Framework & Tools (Build system & dependency management, Visualization, Record and Replay)
-* Ecosystem (Language bindings, Drivers, libraries and simulation (Gazebo)).
+#### Currently, ROS exists in two generations: ROS1 and ROS2.
 
-**currently ros has tow generations ROS1 and ROS2 each with its distributions**
+* **ROS1** was primarily used for education and academic research.
+* **ROS2** is tailored for commercial robots.
 
-* ROS1 was used moslty for education and acadmeic research
-* ROS2 is for commercial robots
-
-ROS includes mature open source libraries to be used for navigation, control, motion planning, vision and simulation purposes. The 3D visualization tool called RVIS is an important tool used with ROS. Similarly, the simulation tool called Gazebo is seen as a usefull tool for robot developers. Apart from this, Open CV library is a library used for detection purposes in ROS 2
+ROS offers mature libraries for various functions, including navigation, control, motion planning, vision, and simulation. Notably, RViz is a key visualization tool used with ROS, while Gazebo serves as a vital simulation tool for developers. Additionally, the OpenCV library is utilized for detection purposes in ROS 2.
 
 <div align="center">
   <img src="images/ros2_libraries.webp" alt="ros2 libraries" style="width: 70%; max-width: 800px;">
@@ -312,7 +285,7 @@ ROS includes mature open source libraries to be used for navigation, control, mo
 
 ## ROS 2 Architecture
 
-The ROS 2 has distributed real-time system architecture. Sensors in robots, motion controllers, detection algorithms, artificial intelligence algorithms, navigation algorithms, etc are all components (called as node) of this distributed architecture. The DDS middleware selected with ROS 2 for data exchange enables these components to communicate with each other in a distributed environment.
+ROS 2 features a distributed real-time system architecture. Various components, such as sensors, motion controllers, detection algorithms, artificial intelligence, and navigation algorithms, are represented as nodes within this architecture. The DDS middleware chosen for ROS 2 facilitates data exchange and communication among these nodes in a distributed environment.
 
 ### different between ros1 and ros2
 
@@ -320,96 +293,75 @@ The ROS 2 has distributed real-time system architecture. Sensors in robots, moti
   <img src="images/different_betweenros1andros2.png" alt="ros1 and ros2 " style="width: 70%; max-width: 800px;" >
 </div>
 
-**Compared with ROS1, the main differences are** :
+#### Key differences between ROS1 and ROS2 include:
 
-* ROS1 mainly supports Linux-based operating system.
-* ROS2 provides more portability of deployment on underlying operating systems, such as Linux, Windows, Mac, and RTOS.
-* ROS data transport protocol uses TCPROS/UDPROS, and communication is highly dependent on the operation of Master node.
-* Communication in ROS2 is based on DDS (Data Distribution Service) standard, enhancing fault tolerance capabilities.
-* Intra-process in ROS2 provides more optimized transmission mechanism.
+* **Operating System Support**: ROS1 primarily supports Linux, while ROS2 enhances portability across various operating systems, including Linux, Windows, macOS, and Real-Time Operating Systems (RTOS).
+* **Communication Protocols**: ROS1 utilizes TCPROS/UDPROS, relying heavily on the Master node. In contrast, ROS2 employs DDS (Data Distribution Service), which improves fault tolerance and independence from a single Master node.
+* **Intra-process Communication**: ROS2 offers a more optimized transmission mechanism for intra-process communication.
 
 ### ROS2 has three main dimentions
 
 #### The Community:
 
- The ROS community is a fundamental element when developing applications for robots with this middleware. In addition to providing
-technical documentation, there is a vast community of developers who contribute with their own applications and utilities through public repositories, to
-which other developers can contribute. Another member of the community may
-have already developed something you need.
+The ROS community is vital for developing applications using this middleware. In addition to providing technical documentation, it boasts a vast network of developers who contribute applications and utilities through public repositories. Often, community members have already created tools or solutions that can be beneficial to others.
 
 #### Computation Graph:
 
-The Computational Graph is a running ROS 2 application.
-This graph is made up of nodes and arcs.
-The Node, the primary computing units in ROS 2, can collaborate with other nodes using several diferent communication paradigms to compose a ROS 2 application.
-This dimension also addresses the monitoring tools, which are also nodes that are inserted in this graph.
+The Computational Graph is a fundamental aspect of a running ROS 2 application. This graph consists of nodes (the primary computing units in ROS 2) and arcs (connections between nodes). Nodes can collaborate through various communication paradigms, enabling the composition of complex applications. Monitoring tools, also represented as nodes, are integrated within this graph.
 
 #### The Workspace:
 
-The Workspace is the set of software installed on the robot
-or computer, and the programs that the user develops. In contrast to the Computational Graph, which has a dynamic nature, the Workspace is static. This
-dimension also addresses the development tools to build the elements of the
-Computational Graph.
+The Workspace encompasses all software installed on the robot or computer, as well as user-developed programs. Unlike the dynamic nature of the Computational Graph, the Workspace is static and also includes the development tools necessary to build the components of the graph.
 
-**we will proceed with the comoutaion graph**
+***we will proceed with the comoutaion graph***
 
 #### how the node could talk to each other :
 
-A node can access the Computation Graph and provides mechanisms to communicate with other nodes through 3 types of paradigms:
+Nodes in ROS 2 communicate with one another through three primary paradigms:
 
 #### Publication/Subscription:
 
-It is an asynchronous communication, where N nodes publish messages to a topic that reaches its M subscribers.
-A topic is like a communication channel that accepts messages of a unique type.
-This type of communication is the most common in ROS 2.
-A very representative case is the node that contains the driver of a camera that publishes images to a topic.
-All the nodes in a system needing images from the camera to carry out their function subscribe to this topic.
+This is an asynchronous communication mechanism where multiple nodes (N) publish messages to a topic, which can be subscribed to by other nodes (M). A topic acts as a communication channel for messages of a specific type. This paradigm is widely used in ROS 2; for instance, a camera driver node publishes images to a topic that other nodes subscribe to for processing.
 
 image
 
-code example
+[example of publisher and subscriber method ](codes/publisher_subscriber.py)
 
 #### Services:
 
-It is a asynchronous communication4 in which a node requests another node and expect an inmediate response.
-This communication usually requires an immediate response so as not to afect the control cycle of the node that calls the service.
-An example could be the request to the mapping service to reset a map, with a response indicating if the call succeeded.
+This is an asynchronous communication method where a node requests another node and expects an immediate response. This is crucial for maintaining control cycles without significant delays. For example, a mapping service node may reset a map and respond to the request.
 
 image
 
-code example
+[example of services method ](codes/services.py)
 
 #### Actions:
 
-These are asynchronous communications in which a node makes a request to another node.
-These requests usually take time to complete, and the calling node may periodically receive feedback or the notifcation that it has fnished successfully or with some error.
-A navigation request is an example of this type of communication. This request is possibly time-consuming, whereby the node requesting the robot to navigate should not be blocked while completing.
+Actions allow asynchronous communication where one node requests another node to perform a task that may take time. The calling node can receive periodic feedback or notifications regarding the status of the action. An example would be a navigation request that doesn't block the requesting node while it waits for completion.
 
 image
 
-code example
+[example of actions method ](codes/actions.py)
 
 ### this how the nodes could talk to each other but how the node actually works ?
 
-The function of a node in a computational graph is to perform processing or control.
-Therefore, they are considered active elements with some alternatives in terms of their execution model:
+Nodes in a computational graph perform processing or control, functioning as active elements with two primary execution models:
 
 #### Iterative execution:
 
-It is popular in the control software for a node to execute its control cycle at a specifc frequency.
-This approach allows controlling how many computational resources a node requires, and the output fow remains constant.
-For example, a node calculating motion commands to actuators at 20 Hz based on their status.
+In this model, nodes execute their control cycles at a specific frequency, allowing precise control over resource usage and consistent output flow. For instance, a node calculating motion commands for actuators at 20 Hz based on sensor status exemplifies this approach.
 
 code examble and image
 
+[example of iterative execution method ](codes/iterative.py)
+
 #### Event-oriented execution:
 
-The execution of these nodes is determined by the frequency at which certain events occur, in this case, the arrival of messages at this node.
-For example, a node that, for each image it receives, performs detection on it and produces an output.
-The frequency at which an output occurs depends on the frequency at which images arrive.
-If no images reach it, it produces no output.
+In this model, node execution is triggered by the arrival of specific events, such as messages. For instance, a node that processes each incoming image and performs detection based on the frequency of message arrivals illustrates this execution style.
 
 code example and image
+
+[example of event oriented  method ](codes/event_oriented.py)
 
 ### layed archetecture
 
@@ -419,15 +371,15 @@ code example and image
 
 ### DDS
 
-ROS 2 uses DDS as its middleware. DDS reduces coupling, increases scalability, and improves performance, reliability, security, and flexibility
-
-DDS used moslty in defense industry
+DDS (Data Distribution Service) is a middleware protocol used for real-time data exchange between distributed systems. In the context of ROS 2, it enables different components (or nodes) of a robot to communicate effectively.
 
 ROS 2 has provided its own abstraction layer (rmw) on top of DDS instead of directly using the DDS middleware. Thus, the details of the DDS middleware interface are abstracted from the user.  =In the current ROS 2 versions, Fast-DDS comes as the standard DDS version
 
 <div align="center">
   <img src="images/dds-overview.jpg" alt="ros2 dds overview" style="width: 70%; max-width: 1000px;">
 </div>
+
+Overall, DDS enhances the communication capabilities of ROS 2, making it suitable for complex robotic applications.
 
 ### ROS2 client library
 
@@ -437,9 +389,11 @@ ROS 2 applications access ROS 2 features through the ROS Client Library (RCL) cl
   <img src="images/DDS_and_clientlib.webp" alt="ros2 dds and clientlib" style="width: 70%; max-width: 500px;">
 </div>
 
-## embedded boards used in robotics
+---
 
-microcontroller-based vs microporsseror-based vs SoC
+### embedded boards used in robotics
+
+When designing robotic systems, selecting the right embedded board is crucial. Here’s a comparison of three common types: microcontroller-based, microprocessor-based, and System on Chip (SoC).
 
 | Feature                                 | Microcontroller-Based Boards                                    | Microprocessor-Based Boards                          | System on Chip (SoC)                                                 |
 | --------------------------------------- | --------------------------------------------------------------- | ---------------------------------------------------- | -------------------------------------------------------------------- |
@@ -458,8 +412,8 @@ microcontroller-based vs microporsseror-based vs SoC
 Input peripherals are essential for robots as they allow them to sense and gather information from their environment. These devices provide the necessary data that helps robots make informed decisions and react accordingly. Common input peripherals in robotics include:
 
 - **Sensors**: Devices that detect physical properties. Examples include:
-  - **Ultrasonic Sensors**: Measure distance to obstacles by emitting sound waves and calculating the time it takes for the echoes to return.
-  - **Infrared Sensors**: Use light waves to detect obstacles or measure temperature, commonly used in line-following robots.
+  - **Cameras**: Capture visual information, enabling object recognition and navigation through 2D or 3D images.
+  - **LiDAR** (Light Detection and Ranging): Uses laser pulses to create accurate 3D maps of the environment, aiding in navigation and obstacle detection for autonomous systems.
 
 ### Output Peripherals
 
@@ -495,58 +449,22 @@ Other peripherals enhance the robot's functionality and enable additional capabi
 - **Storage**: Components like SD cards or flash memory provide capacity to store data, such as sensor logs, configurations, or program files.
 - **Power Supply**: Essential for powering all robot components, including batteries or external power sources for operational longevity.
 
-difference between micorcontroller based and microprocessor based in robotics from the book :
+### Choosing the Right Board
 
-what matters while choosing such boards (from the book )
+When selecting an embedded board, consider:
 
-lets build our system
+* **Application Requirements** : Analyze the complexity of tasks the robot will perform.
+* **Processing Power Needed** : Determine whether low power (microcontroller) or high performance (microprocessor) is essential.
+* **Cost Constraints** : Align board selection with your budget.
+* **ROS Support** : Ensure compatibility with ROS if you're planning to use it for development.
 
-    +--------------------+
-          |      Camera        |
-          |  (Device Driver)   |
-          |   - Image Capture  |
-          +--------------------+
-                    |
-                    |
-                    |  USB/CSI or I2C
-                    |
-                    v  Serial (UART) or I2C           Serial (UART) or I2C
-+---------------------+        +------------------+     +----------------+
-| LIDAR                 | ---> |  Raspberry Pi    | <---|GPS              |
-|                           |           |                       |         | (device driver )|
-|                          |            |                       |        |  - Geolocation  |
-| - Distance Measurement|  |   (ROS2 Nodes)     +-----------------+
-| (Device Drivers)      |      |                         |
-+-----------------------+         |  - Sensor Fusion  |
-                                         |- SLAM           |
-                                         |- Path Planning   |
-                                         |- Object Detection |
-                                          |- Control Logic   |
-                                          +------------------+
+---
 
-    |
-                                                    |  Serial (UART)
-                                                    v
-                                             +-----------+
-                                             |   Arduino |
-                                             |   (Motor  |
-                                             |   Control)
-                                               - PWM Signals  |
-                                          |   - Motor Feedback |
-                                           +-----------+
-                                                  |
-                                                  |  PWM (for Motor Driver)
-                                                 v
-		                        +--------------------+
-                		       |    Motor Driver    |
-                      			 |  (Device Driver)   |
-                      			 +--------------------+
-                               			  |
-                                		 v
-                               		     +-----+
-                              		     | DC  |
-                               		    |Motors|
-                                	     +-----+
+### lets build our system
+
+<div align="center">
+  <img src="images/system archetecture with ahrd.jpeg" alt="system archetcture" style="width: 80%; max-width: 1000px;">
+</div>
 
 ## hardware - software integration
 
