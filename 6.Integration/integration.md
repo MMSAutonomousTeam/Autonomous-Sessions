@@ -387,7 +387,7 @@ A navigation request is an example of this type of communication. This request i
 
 image
 
-code example 
+code example
 
 ### this how the nodes could talk to each other but how the node actually works ?
 
@@ -409,7 +409,7 @@ For example, a node that, for each image it receives, performs detection on it a
 The frequency at which an output occurs depends on the frequency at which images arrive.
 If no images reach it, it produces no output.
 
-code example and image 
+code example and image
 
 ### layed archetecture
 
@@ -438,8 +438,6 @@ ROS 2 applications access ROS 2 features through the ROS Client Library (RCL) cl
 </div>
 
 ## embedded boards used in robotics
-
-
 
 ## hardware - software integration
 
