@@ -111,7 +111,7 @@ Understanding how the system responds to environmental challenges is crucial. Th
 
 ---
 
-### hierarchical appraoch :
+### hierarchical Appraoch:
 
 <div align="center">
   <img src="images/horizontal.png" alt="horizontal" style="width: 100%; max-width: 1000px;">
@@ -125,7 +125,7 @@ The **hierarchical paradigm** was historically dominant in AI robotics, emphasiz
 
 ---
 
-### Reactive Systems
+### Reactive Appraoch:
 
 In contrast, the **reactive paradigm** organizes components **vertically**, providing a more direct path from sensors to actuators. This approach facilitates quicker responses to environmental variables, enhancing the robot's adaptability.
 
@@ -147,7 +147,7 @@ These modules can be thought of as simple computational units, akin to circuits 
 
 ---
 
-### hybrid archetecute :
+### hybrid Appraoch:
 
 A more recent development in robotic design is the **hybrid architecture**, which seeks to integrate the strengths of both reactive and deliberative paradigms. This three-layered system comprises a **reactive layer, a deliberative layer, and a middle layer** that coordinates between the two.
 
