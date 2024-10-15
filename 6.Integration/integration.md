@@ -123,6 +123,8 @@ The *hierarchical paradigm* was historically dominant in AI robotics, emphasizin
 
 In contrast, the *reactive paradigm* organizes components vertically, providing a more direct path from sensors to effectors. This approach facilitates quicker responses to environmental stimuli, enhancing the robot’s adaptability.
 
+example : braitenberg vehicles .(mainly relay on sensros data )
+
 <div align="center">
   <img src="images/vertical.gif" alt="vertical" style="width: 100%; max-width: 1000px;">
 </div>
@@ -279,7 +281,7 @@ Robot Operating System (ROS) consists of a suite of open-source algorithms, hard
 ROS offers mature libraries for various functions, including navigation, control, motion planning, vision, and simulation. Notably, RViz is a key visualization tool used with ROS, while Gazebo serves as a vital simulation tool for developers. Additionally, the OpenCV library is utilized for detection purposes in ROS 2.
 
 <div align="center">
-  <img src="images/ros2_libraries.webp" alt="ros2 libraries" style="width: 70%; max-width: 800px;">
+  <img src="images/image.png" alt="ros2 libraries" style="width: 70%; max-width: 800px;">
 </div>
 
 ## ROS 2 Architecture
@@ -308,6 +310,12 @@ The ROS community is vital for developing applications using this middleware. In
 
 The Computational Graph is a fundamental aspect of a running ROS 2 application. This graph consists of nodes (the primary computing units in ROS 2) and arcs (connections between nodes). Nodes can collaborate through various communication paradigms, enabling the composition of complex applications. Monitoring tools, also represented as nodes, are integrated within this graph.
 
+<div align="center">
+  <img src="images/ROS-Node-Computation-Graph-of-our-code-structure.png" alt="ros2 dds and clientlib" style="width: 100%; max-width: 900px;">
+</div>
+
+ROS Node Computation Graph of our code structure of S.O.S VR Team Description Paper RoboCup 2016 Rescue Virtual Robot League
+
 #### The Workspace:
 
 The Workspace encompasses all software installed on the robot or computer, as well as user-developed programs. Unlike the dynamic nature of the Computational Graph, the Workspace is static and also includes the development tools necessary to build the components of the graph.
@@ -322,7 +330,17 @@ Nodes in ROS 2 communicate with one another through three primary paradigms:
 
 This is an asynchronous communication mechanism where multiple nodes (N) publish messages to a topic, which can be subscribed to by other nodes (M). A topic acts as a communication channel for messages of a specific type. This paradigm is widely used in ROS 2; for instance, a camera driver node publishes images to a topic that other nodes subscribe to for processing.
 
-image
+simgle subscriber
+
+<div align="center">
+  <img src="images/Topic-SinglePublisherandSingleSubscriber.gif" alt="ros2 dds and clientlib" style="width: 100%; max-width: 1000px;">
+</div>
+
+topic with multiple subscribers
+
+<div align="center">
+  <img src="images/Topic-MultiplePublisherandMultipleSubscriber.gif" alt="ros2 dds and clientlib" style="width: 100%; max-width: 1000px;">
+</div>
 
 [example of publisher and subscriber method ](codes/publisher_subscriber.py)
 
@@ -330,7 +348,9 @@ image
 
 This is an asynchronous communication method where a node requests another node and expects an immediate response. This is crucial for maintaining control cycles without significant delays. For example, a mapping service node may reset a map and respond to the request.
 
-image
+<div align="center">
+  <img src="images/services.gif" alt="ros2 dds and clientlib" style="width: 100%; max-width: 1000px;">
+</div>
 
 [example of services method ](codes/services.py)
 
@@ -338,7 +358,9 @@ image
 
 Actions allow asynchronous communication where one node requests another node to perform a task that may take time. The calling node can receive periodic feedback or notifications regarding the status of the action. An example would be a navigation request that doesn't block the requesting node while it waits for completion.
 
-image
+<div align="center">
+  <img src="images/Action-SingleActionClient.gif" alt="ros2 dds and clientlib" style="width: 100%; max-width: 1000px;">
+</div>
 
 [example of actions method ](codes/actions.py)
 
@@ -474,3 +496,5 @@ When selecting an embedded board, consider:
 ## **references :**
 
 4.https://medium.com/software-architecture-foundations/robot-operating-system-2-ros-2-architecture-731ef1867776
+
+reactive paradiagms : braitenberg vehicles (book : vehicles)
