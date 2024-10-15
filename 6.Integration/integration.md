@@ -31,13 +31,13 @@ While this guide is designed for students, professionals, and robotics enthusias
 ## teleoperational vs autonomous robots
 
 <div align="center">
-  <img src="images/High-level-architecture-of-a-UAV-system.png" alt="System Components Diagram" style="width: 100%; max-width: 1000px;">
+  <img src="images/High-level-architecture-of-a-UAV-system.png" alt="System Components Diagram" style="width: 90%; max-width: 800px;">
 </div>
 
-**Teleoperational Robots** are directly controlled by a human operator who uses a remote control or computer to send commands. This type of robot is often deployed in high-risk environments, such as bomb disposal or remote surgeries. The operator must maintain focus and react swiftly, as they are responsible for every action the robot takes. However, teleoperational robots can be slower and have limitations in speed and range due to their reliance on human control and the necessity for a stable communication link.
+**Teleoperational Robots** are directly controlled by a human operator who uses a remote control or computer to send commands. This type of robot is often deployed in high-risk environments, such as **bomb disposal** or **remote surgeries.** The operator must maintain focus and react swiftly, as they are **responsible for every action the robot takes.** However, teleoperational robots can be **slower** and have **limitations in speed and range** due to their reliance on human control and the necessity for a stable communication link.
 
 <div align="center">
-  <img src="images/The-software-architecture-of-our-UAV-inspection-system.png" alt="System Components Diagram" style="width: 100%; max-width: 1000px;">
+  <img src="images/The-software-architecture-of-our-UAV-inspection-system.png" alt="System Components Diagram" style="width: 100%; max-width: 800px;">
 </div>
 
 In contrast, **Autonomous Robots** can operate independently without human intervention. They leverage sensors to perceive their environment and make real-time decisions based on their observations. These robots can adapt to changes in their surroundings, making them ideal for applications like self-driving cars and robotic vacuum cleaners. In this system, **the robot itself determines its actions based on the information it gathers.**
@@ -104,19 +104,19 @@ Understanding how the system responds to environmental challenges is crucial. Th
 Murphy (2000) discusses various robotic architectures—or paradigms—in her book (introduction to AI robotics ) that illustrate the interplay between three fundamental actions: **sense** , **plan** , and **act** . These paradigms define how sensory data is processed and propagated throughout the system, shaping how robots interact with their environments and respond to challenges.
 
 <div align="center">
-  <img src="images/paradigms.gif" alt="paradigms" style="width: 100%; max-width: 1000px;">
+  <img src="images/paradigms.png" alt="paradigms" style="width: 100%; max-width: 500px;">
 </div>
 
 ### hierarchical appraoch :
 
 <div align="center">
-  <img src="images/horizontal.gif" alt="horizontal" style="width: 100%; max-width: 1000px;">
+  <img src="images/horizontal.png" alt="horizontal" style="width: 100%; max-width: 1000px;">
 </div>
 
 The *hierarchical paradigm* was historically dominant in AI robotics, emphasizing detailed world modeling and sequential planning. While effective in structured environments, this approach often faced challenges. As the robot constructed its model and deliberated on its next steps, the external environment would likely change, resulting in a behavior known as "look-and-lurch." A notable example is  *Shakey* , a robot developed at the Stanford Research Institute in the 1970s, which was controlled by a remote computer and exhibited this behavior while attempting to manipulate blocks.
 
 <div align="center">
-  <img src="images/cc64e1e5-shakeysriinternational1-1487364021434.webp" alt="shaky" style="width: 100%; max-width: 1000px;">
+  <img src="images/cc64e1e5-shakeysriinternational1-1487364021434.png" alt="shaky" style="width: 100%; max-width: 600px;">
 </div>
 
 ### Reactive Systems
@@ -124,7 +124,7 @@ The *hierarchical paradigm* was historically dominant in AI robotics, emphasizin
 In contrast, the *reactive paradigm* organizes components vertically, providing a more direct path from sensors to effectors. This approach facilitates quicker responses to environmental stimuli, enhancing the robot’s adaptability.
 
 <div align="center">
-  <img src="images/vertical.gif" alt="vertical" style="width: 100%; max-width: 1000px;">
+  <img src="images/vertical.png" alt="vertical" style="width: 100%; max-width: 800px;">
 </div>
 
 However, this vertical organization introduces potential contention over the effectors. For instance, when steering a car, multiple components—like avoiding an obstacle or exploring—may compete for control over the robot's actuators. To address this, Brooks introduced the **subsumption architecture**, which allows higher-level components to subsume lower-level ones.
@@ -134,7 +134,7 @@ In this architecture, behaviors are organized into layers with an arbitration sc
 These modules can be thought of as simple computational units, akin to circuits or finite state machines, that continuously transition between states based on environmental feedback.
 
 <div align="center">
-  <img src="images/avoid.gif" alt="vertical" style="width: 100%; max-width: 1000px;">
+  <img src="images/avoid.png" alt="vertical" style="width: 100%; max-width: 800px;">
 </div>
 
 ### hybrid archetecute :
@@ -144,7 +144,7 @@ A more recent development in robotic design is the hybrid architecture, which se
 In this architecture, the reactive layer allows for quick responses to immediate stimuli, while the deliberative layer enables longer-term planning and strategy development. The middle layer acts as a mediator, ensuring that the system can think and act independently and concurrently, striking a balance between rapid reaction and thoughtful decision-making.
 
 <div align="center">
-  <img src="images/hybrid.png" alt="vertical" style="width: 100%; max-width: 1000px;">
+  <img src="images/hybrid.png" alt="vertical" style="width: 100%; max-width: 800px;">
 </div>
 
 ***By understanding these architectural paradigms, we can better design systems that effectively respond to dynamic environments, enhancing the capabilities and reliability of autonomous robots.***
@@ -165,7 +165,7 @@ As Rodney Brooks famously said, **"Robotics is the art of integration."**   A ro
 - **Scalability**: Integration facilitates the development of complex robots with diverse functionalities. By seamlessly incorporating additional components, we can enhance the robot's capabilities without compromising its performance.
 
 <div align="center">
-  <img src="images/SYS_INTEG.jpeg" alt="vertical" style="width: 100%; max-width: 1000px;">
+  <img src="images/SYS_INTEG.png" alt="vertical" style="width: 100%; max-width: 1000px;">
 </div>
 
 ---
@@ -194,7 +194,7 @@ image for (software arch)
 [example of software archetecture with OO-R](codes/OO-R_psudeoCode.py)
 
 <div align="center">
-  <img src="images/OO-R.jpeg" alt="vertical" style="width: 100%; max-width: 1000px;">
+  <img src="images/OO-R.png" alt="vertical" style="width: 100%; max-width: 1000px;">
 </div>
 
 ### Component-Based Robotics (CB-R)
@@ -204,7 +204,7 @@ image for (software arch)
 [example of software archetecture with CB-R](codes/CB-R_psudeoCode.py)
 
 <div align="center">
-  <img src="images/CB-R.jpeg" alt="vertical" style="width: 100%; max-width: 1000px;">
+  <img src="images/CB-R.png" alt="vertical" style="width: 100%; max-width: 1000px;">
 </div>
 
 ### Service-Driven Robotics (SD-R)
@@ -214,7 +214,7 @@ image for (software arch)
 [example of software archetecture with SB-R](codes/SB-R_psudeoCode.py)
 
 <div align="center">
-  <img src="images/SD-R.jpeg" alt="vertical" style="width: 100%; max-width: 1000px;">
+  <img src="images/SD-R.png" alt="vertical" style="width: 100%; max-width: 1000px;">
 </div>
 
 after understanding what are thAfter understanding the various architectures available for building software, we can leverage frameworks that facilitate this process. These frameworks provide pre-defined structures and tools that streamline development, ensuring that our software components can be integrated efficiently and effectively.e archetectures we could use to build the software , there are frameworks helps us to do
@@ -279,7 +279,7 @@ Robot Operating System (ROS) consists of a suite of open-source algorithms, hard
 ROS offers mature libraries for various functions, including navigation, control, motion planning, vision, and simulation. Notably, RViz is a key visualization tool used with ROS, while Gazebo serves as a vital simulation tool for developers. Additionally, the OpenCV library is utilized for detection purposes in ROS 2.
 
 <div align="center">
-  <img src="images/ros2_libraries.webp" alt="ros2 libraries" style="width: 70%; max-width: 800px;">
+  <img src="images/ros2_libraries.png" alt="ros2 libraries" style="width: 70%; max-width: 800px;">
 </div>
 
 ## ROS 2 Architecture
@@ -342,9 +342,17 @@ image
 
 <<<<<<< HEAD
 code example
-=======
+============
+
 [example of actions method ](codes/actions.py)
+
 >>>>>>> ec45e2928d6252f72e84b3f0eb30a689d2ba63c7
+>>>>>>>
+>>>>>>
+>>>>>
+>>>>
+>>>
+>>
 
 ### this how the nodes could talk to each other but how the node actually works ?
 
@@ -364,15 +372,22 @@ In this model, node execution is triggered by the arrival of specific events, su
 
 code example and image
 <<<<<<< HEAD
-=======
+============
 
 [example of event oriented  method ](codes/event_oriented.py)
+
 >>>>>>> ec45e2928d6252f72e84b3f0eb30a689d2ba63c7
+>>>>>>>
+>>>>>>
+>>>>>
+>>>>
+>>>
+>>
 
 ### layed archetecture
 
 <div align="center">
-  <img src="images/ros2layers.png" alt="ros2 archetecture" style="width: 70%; max-width: 800px;" >
+  <img src="images/ros2layers.png" alt="ros2 archetecture" style="width: 70%; max-width: 700px;" >
 </div>
 
 ### DDS
@@ -392,13 +407,14 @@ Overall, DDS enhances the communication capabilities of ROS 2, making it suitabl
 ROS 2 applications access ROS 2 features through the ROS Client Library (RCL) client library. The Rcl library is written in C language and on it there are Rclcpp client libraries for C ++ language and Rclpy for Python language. There are independently written ROS 2 client libraries in other languages such as Java, Go. The client library is primarily provided with the standard interface required to exchange data with Topic and Service approaches over ROS 2. In addition, the ROS2 library has capabilities to provide operating system abstraction and ready-made micro-architectural structures.
 
 <div align="center">
-  <img src="images/DDS_and_clientlib.webp" alt="ros2 dds and clientlib" style="width: 70%; max-width: 500px;">
+  <img src="images/DDS_and_clientlib.png" alt="ros2 dds and clientlib" style="width: 70%; max-width: 500px;">
 </div>
 
 ---
 
 <<<<<<< HEAD
-=======
+============
+
 ### embedded boards used in robotics
 
 When designing robotic systems, selecting the right embedded board is crucial. Here’s a comparison of three common types: microcontroller-based, microprocessor-based, and System on Chip (SoC).
@@ -471,10 +487,17 @@ When selecting an embedded board, consider:
 ### lets build our system
 
 <div align="center">
-  <img src="images/system archetecture with ahrd.jpeg" alt="system archetcture" style="width: 80%; max-width: 1000px;">
+  <img src="images/system archetecture with ahrd.png" alt="system archetcture" style="width: 80%; max-width: 500px;">
 </div>
 
 >>>>>>> ec45e2928d6252f72e84b3f0eb30a689d2ba63c7
+>>>>>>>
+>>>>>>
+>>>>>
+>>>>
+>>>
+>>
+
 ## hardware - software integration
 
 <div align="center">
