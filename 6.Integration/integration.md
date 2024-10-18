@@ -525,3 +525,17 @@ When selecting an embedded board, consider:
 4.https://medium.com/software-architecture-foundations/robot-operating-system-2-ros-2-architecture-731ef1867776
 
 reactive paradiagms : braitenberg vehicles (book : vehicles)
+
+---
+
+### **Have Questions? Reach Out!** ✉️
+
+If you have any questions or need further clarification about anything in this documentation, feel free to get in touch. We're here to help you on your journey into the world of autonomous systems!
+
+You can contact us at:
+
+📧  **Email** : mmsautonomousteam@gmail.com
+
+🌐  **GitHub Discussions** : [github](https://github.com/MMSAutonomousTeam/Autonomous-Sessions/discussions)
+
+We're excited to support you and look forward to your questions! 😊
