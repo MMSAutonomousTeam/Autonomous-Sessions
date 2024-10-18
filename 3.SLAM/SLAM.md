@@ -649,3 +649,17 @@ https://youtube.com/playlist?list=PLX2gX-ftPVXU3oUFNATxGXY90AULiqnWT&si=yRI9pR7c
 5-Get into SLAM [Cyrill Stachniss](https://www.youtube.com/@CyrillStachniss)
 
 https://youtube.com/playlist?list=PLgnQpQtFTOGQrZ4O5QzbIHgl3b1JHimN_&si=iqzLMuYdtgYe4Q_U
+
+---
+
+### **Have Questions? Reach Out!** ✉️
+
+If you have any questions or need further clarification about anything in this documentation, feel free to get in touch. We're here to help you on your journey into the world of autonomous systems!
+
+You can contact us at:
+
+📧  **Email** : mmsautonomousteam@gmail.com
+
+🌐  **GitHub Discussions** : [github](https://github.com/MMSAutonomousTeam/Autonomous-Sessions/discussions)
+
+We're excited to support you and look forward to your questions! 😊
