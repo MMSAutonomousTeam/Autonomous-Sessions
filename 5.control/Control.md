@@ -370,3 +370,17 @@ Stanley control law, therefore, is essentially defined to meet the following ***
 [Transfer Functions: Introduction and Implementation -YouTube](https://www.youtube.com/playlist?list=PLxdnSsBqCrrF9KOQRB9ByfB0EUMwnLO9o)
 
 [Understanding PID Control - YouTube](https://www.youtube.com/playlist?list=PLn8PRpmsu08pQBgjxYFXSsODEF3Jqmm-y)
+
+---
+
+### **Have Questions? Reach Out!** ✉️
+
+If you have any questions or need further clarification about anything in this documentation, feel free to get in touch. We're here to help you on your journey into the world of autonomous systems!
+
+You can contact us at:
+
+📧  **Email** : mmsautonomousteam@gmail.com
+
+🌐  **GitHub Discussions** : [github](https://github.com/MMSAutonomousTeam/Autonomous-Sessions/discussions)
+
+We're excited to support you and look forward to your questions! 😊
