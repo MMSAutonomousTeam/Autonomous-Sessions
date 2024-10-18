@@ -96,5 +96,6 @@ Welcome to the repository for the **Autonomous Systems Sessions.** These session
 * Hardware-Software integration
 ---
 
-####Have Questions?
+#### Have Questions?
+
 If you have any questions related to the content, feel free to ask in the Discussion Tab of this repository. The community and instructors are here to help.
