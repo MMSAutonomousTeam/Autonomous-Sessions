@@ -5,6 +5,7 @@
 ### *Introduction to Autonomous Systems*
 
 **Instructor:** Yousef Asal
+
 **Date**: 5/10/2024
 
 * What is autonomous system
@@ -19,6 +20,7 @@
 ### *Intro to Perception*
 
 **Instructor:** Omar Fahmy
+
 **Date**: 7/10/2024
 
 * Understand what perception is
@@ -33,6 +35,7 @@
 ### *Intro to SLAM*
 
 **Instructor:** Omar Ashraf
+
 **Date**: 9/10/2024
 
 * What is autonomous system
@@ -47,6 +50,7 @@
 ### *Intro to Motion Planning*
 
 **Instructor:** Ahmed Elshaboury
+
 **Date**: 12/10/2024
 
 * What is motion planning
@@ -63,6 +67,7 @@
 ### *Intro to Control*
 
 **Instructor:** Abdallah Nabil
+
 **Date**: 14/10/2024
 
 * What is control and what do we use it for
@@ -78,6 +83,7 @@
 ### *Intro to Integration in Autonomous systems*
 
 **Instructor:** Zaynap Ahmad
+
 **Date**: 17/10/2024
 
 * Autonomous system architecture
