@@ -495,6 +495,6 @@ You can contact us at:
 
 📧  **Email** : mmsautonomousteam@gmail.com
 
-🌐  **GitHub Issues** : [github](https://github.com/MMSAutonomousTeam/Autonomous-Sessions/issues)
+🌐  **GitHub Discussions** : [github]([https://github.com/MMSAutonomousTeam/Autonomous-Sessions/issues](https://github.com/MMSAutonomousTeam/Autonomous-Sessions/discussions))
 
 We're excited to support you and look forward to your questions! 😊
