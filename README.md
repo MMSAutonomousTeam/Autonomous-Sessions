@@ -1,5 +1,7 @@
 # Autonomous-Sessions
 
+Welcome to the repository for the **Autonomous Systems Sessions.** These sessions are designed to provide a solid foundation in the field of autonomous systems, with content accessible for beginners. Below is an overview of the sessions and key topics covered.
+
 ## [session  1 ](1.Intro/Introduction_to_autonomous_system.md)
 
 ### *Introduction to Autonomous Systems*
@@ -93,3 +95,6 @@
 * ROS 2 architecture
 * Hardware-Software integration
 ---
+
+####Have Questions?
+If you have any questions related to the content, feel free to ask in the Discussion Tab of this repository. The community and instructors are here to help.
